@@ -23,7 +23,7 @@ function getPostContent(slug) {
 
 export async function generateMetadata({ params: { slug } }) {
     if (!guideMetadata?.length) return;
-    console.log("guideMetadata4334", guideMetadata);
+    // console.log("guideMetadata4334", guideMetadata);
     const guide = guideMetadata?.find(guide => guide.slug === slug) || {};
     if (!guide) return;
     const images = [guide?.image];
