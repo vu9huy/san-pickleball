@@ -1,0 +1,27 @@
+.bread-crumb-container {
+    /* width: 100%; */
+    max-width: var(--page-max-width);
+    margin: 20px 20px 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bread-crumb-item a {
+    color: var(--primary-color);
+}
+
+.bread-crumb-item a:hover {
+    text-decoration: underline;
+}
+
+.bread-crumb-item.active a {
+    color: #000000;
+    pointer-events: none;
+    cursor: context-menu;
+}
+
+.bread-crumb-slash {
+    margin: 0 8px;
+}

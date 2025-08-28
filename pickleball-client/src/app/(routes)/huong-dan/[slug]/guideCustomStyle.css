@@ -1,0 +1,43 @@
+.guide-banner-image {
+    max-width: 100%;
+    height: 700px;
+    margin-bottom: 30px;
+}
+
+.guide-banner-image {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cach-cam-vot-pickleball-video video {
+    width: 450px;
+    height: 650px;
+}
+
+p.image-note {
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1080px) {
+    .guide-banner-image {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .guide-banner-image {
+        height: 500px;
+    }
+
+    .cach-cam-vot-pickleball-video video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .guide-banner-image {
+        height: 400px;
+    }
+}

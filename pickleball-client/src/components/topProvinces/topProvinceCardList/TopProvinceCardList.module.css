@@ -1,0 +1,21 @@
+.province-card-list-wrapper {
+    overflow-x: auto;
+    padding: 0 10px 24px;
+    margin: 0 auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.province-card-list {
+    display: flex;
+    gap: 20px;
+    /* width: max-content; */
+    min-width: fit-content;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .province-card-list {
+        gap: 15px;
+    }
+}

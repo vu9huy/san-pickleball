@@ -1,0 +1,45 @@
+.court-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 36px;
+}
+
+.court-form-field {}
+
+.court-form-input {
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.court-form-label {
+    font-weight: 600;
+}
+
+.court-form-textarea {
+    resize: vertical;
+    width: 100%;
+    padding: 8px;
+    max-height: 200px;
+    border-radius: 4px;
+}
+
+.court-form-textarea:active,
+.court-form-textarea:focus {
+    border: 2px solid var(--primary-color) !important;
+    outline-style: none;
+    box-shadow: none;
+}
+
+.error-messsage {
+    color: red;
+    font-size: 14px;
+    padding-top: 6px;
+}
+
+.court-form-submit {
+    margin-top: 20px;
+    height: 40px;
+    padding: 0;
+}

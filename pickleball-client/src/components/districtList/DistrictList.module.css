@@ -1,0 +1,19 @@
+.district-list-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 20px;
+}
+
+.district-list-item {
+    color: var(--primary-color);
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    font-weight: 600;
+}

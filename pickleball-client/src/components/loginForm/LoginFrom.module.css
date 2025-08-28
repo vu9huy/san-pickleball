@@ -1,0 +1,26 @@
+.login-form-container {}
+
+.login-form-field {
+    margin: 16px 0;
+}
+
+.login-form-password {
+    position: relative;
+}
+
+.login-form-input {
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.show-password-wrapper {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.login-form-submit {
+    margin-top: 8px;
+    width: 100%;
+}

@@ -1,0 +1,34 @@
+.amenities-court-form-container {}
+
+.amenities-court-form-option-wrapper {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+}
+
+.amenities-court-form-option-wrapper label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.amenities-court-form-option-wrapper input {
+    accent-color: var(--primary-color);
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+}
+
+.amenities-court-form-option-wrapper label span {
+    padding-left: 6px;
+    line-height: 1;
+}
+
+@media screen and (max-width: 500px) {
+    .amenities-court-form-option-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

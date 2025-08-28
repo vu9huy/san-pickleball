@@ -1,0 +1,18 @@
+# Use an official Node.js runtime as the base image
+FROM node:18.17.0
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json yarn.lock ./
+RUN yarn install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the application port
+EXPOSE 2704
+
+# Run the backend server
+CMD ["yarn", "dev"]

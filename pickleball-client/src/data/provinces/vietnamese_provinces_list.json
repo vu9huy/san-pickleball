@@ -1,0 +1,1132 @@
+[
+    {
+        "value": "",
+        "label": "Tất cả các tỉnh/thành",
+        "geolocation": {
+            "latitude": 21.028511,
+            "longitude": 105.804817
+        },
+        "slug": "tat-ca-cac-tinh-thanh",
+        "image": ""
+    },
+    {
+        "value": "Hà Nội",
+        "label": "Hà Nội",
+        "geolocation": {
+            "latitude": 21.028511,
+            "longitude": 105.804817
+        },
+        "districts": [
+            {
+                "value": "",
+                "label": "Tất cả quận/huyện",
+                "slug": "",
+                "geolocation": {
+                    "latitude": 21.028511,
+                    "longitude": 105.804817
+                }
+            },
+            {
+                "value": "Ba Đình",
+                "label": "Ba Đình",
+                "slug": "ba-dinh",
+                "geolocation": {
+                    "latitude": 21.0333,
+                    "longitude": 105.8142
+                }
+            },
+            {
+                "value": "Hoàn Kiếm",
+                "label": "Hoàn Kiếm",
+                "slug": "hoan-kiem",
+                "geolocation": {
+                    "latitude": 21.0285,
+                    "longitude": 105.8542
+                }
+            },
+            {
+                "value": "Hai Bà Trưng",
+                "label": "Hai Bà Trưng",
+                "slug": "hai-ba-trung",
+                "geolocation": {
+                    "latitude": 21.0064,
+                    "longitude": 105.8642
+                }
+            },
+            {
+                "value": "Tây Hồ",
+                "label": "Tây Hồ",
+                "slug": "tay-ho",
+                "geolocation": {
+                    "latitude": 21.0718,
+                    "longitude": 105.8036
+                }
+            },
+            {
+                "value": "Cầu Giấy",
+                "label": "Cầu Giấy",
+                "slug": "cau-giay",
+                "geolocation": {
+                    "latitude": 21.0369,
+                    "longitude": 105.7906
+                }
+            },
+            {
+                "value": "Đống Đa",
+                "label": "Đống Đa",
+                "slug": "dong-da",
+                "geolocation": {
+                    "latitude": 21.018,
+                    "longitude": 105.8297
+                }
+            },
+            {
+                "value": "Nam Từ Liêm",
+                "label": "Nam Từ Liêm",
+                "slug": "nam-tu-liem",
+                "geolocation": {
+                    "latitude": 21.0175,
+                    "longitude": 105.7665
+                }
+            },
+            {
+                "value": "Bắc Từ Liêm",
+                "label": "Bắc Từ Liêm",
+                "slug": "bac-tu-liem",
+                "geolocation": {
+                    "latitude": 21.0594,
+                    "longitude": 105.765
+                }
+            },
+            {
+                "value": "Thanh Xuân",
+                "label": "Thanh Xuân",
+                "slug": "thanh-xuan",
+                "geolocation": {
+                    "latitude": 20.9981,
+                    "longitude": 105.8105
+                }
+            },
+            {
+                "value": "Hà Đông",
+                "label": "Hà Đông",
+                "slug": "ha-dong",
+                "geolocation": {
+                    "latitude": 20.9739,
+                    "longitude": 105.7728
+                }
+            },
+            {
+                "value": "Thanh Trì",
+                "label": "Thanh Trì",
+                "slug": "thanh-tri",
+                "geolocation": {
+                    "latitude": 20.9466,
+                    "longitude": 105.8412
+                }
+            },
+            {
+                "value": "Hoàng Mai",
+                "label": "Hoàng Mai",
+                "slug": "hoang-mai",
+                "geolocation": {
+                    "latitude": 20.9828,
+                    "longitude": 105.8694
+                }
+            },
+            {
+                "value": "Long Biên",
+                "label": "Long Biên",
+                "slug": "long-bien",
+                "geolocation": {
+                    "latitude": 21.0423,
+                    "longitude": 105.9119
+                }
+            },
+            {
+                "value": "Gia Lâm",
+                "label": "Gia Lâm",
+                "slug": "gia-lam",
+                "geolocation": {
+                    "latitude": 21.0208,
+                    "longitude": 105.9316
+                }
+            },
+            {
+                "value": "Sóc Sơn",
+                "label": "Sóc Sơn",
+                "slug": "soc-son",
+                "geolocation": {
+                    "latitude": 21.263,
+                    "longitude": 105.848
+                }
+            },
+            {
+                "value": "Đông Anh",
+                "label": "Đông Anh",
+                "slug": "dong-anh",
+                "geolocation": {
+                    "latitude": 21.1384,
+                    "longitude": 105.8492
+                }
+            },
+            {
+                "value": "Mê Linh",
+                "label": "Mê Linh",
+                "slug": "me-linh",
+                "geolocation": {
+                    "latitude": 21.1628,
+                    "longitude": 105.7144
+                }
+            },
+            {
+                "value": "Sơn Tây",
+                "label": "Sơn Tây",
+                "slug": "son-tay",
+                "geolocation": {
+                    "latitude": 21.14,
+                    "longitude": 105.5047
+                }
+            },
+            {
+                "value": "Ba Vì",
+                "label": "Ba Vì",
+                "slug": "ba-vi",
+                "geolocation": {
+                    "latitude": 21.2183,
+                    "longitude": 105.4089
+                }
+            },
+            {
+                "value": "Phúc Thọ",
+                "label": "Phúc Thọ",
+                "slug": "phuc-tho",
+                "geolocation": {
+                    "latitude": 21.0988,
+                    "longitude": 105.5787
+                }
+            },
+            {
+                "value": "Đan Phượng",
+                "label": "Đan Phượng",
+                "slug": "dan-phuong",
+                "geolocation": {
+                    "latitude": 21.0744,
+                    "longitude": 105.6798
+                }
+            },
+            {
+                "value": "Hoài Đức",
+                "label": "Hoài Đức",
+                "slug": "hoai-duc",
+                "geolocation": {
+                    "latitude": 21.0297,
+                    "longitude": 105.7075
+                }
+            },
+            {
+                "value": "Quốc Oai",
+                "label": "Quốc Oai",
+                "slug": "quoc-oai",
+                "geolocation": {
+                    "latitude": 20.9722,
+                    "longitude": 105.6496
+                }
+            },
+            {
+                "value": "Thạch Thất",
+                "label": "Thạch Thất",
+                "slug": "thach-that",
+                "geolocation": {
+                    "latitude": 21.0483,
+                    "longitude": 105.592
+                }
+            },
+            {
+                "value": "Chương Mỹ",
+                "label": "Chương Mỹ",
+                "slug": "chuong-my",
+                "geolocation": {
+                    "latitude": 20.9054,
+                    "longitude": 105.6314
+                }
+            },
+            {
+                "value": "Thanh Oai",
+                "label": "Thanh Oai",
+                "slug": "thanh-oai",
+                "geolocation": {
+                    "latitude": 20.8466,
+                    "longitude": 105.7427
+                }
+            },
+            {
+                "value": "Thường Tín",
+                "label": "Thường Tín",
+                "slug": "thuong-tin",
+                "geolocation": {
+                    "latitude": 20.8539,
+                    "longitude": 105.8521
+                }
+            },
+            {
+                "value": "Phú Xuyên",
+                "label": "Phú Xuyên",
+                "slug": "phu-xuyen",
+                "geolocation": {
+                    "latitude": 20.7741,
+                    "longitude": 105.9265
+                }
+            },
+            {
+                "value": "Ứng Hòa",
+                "label": "Ứng Hòa",
+                "slug": "ung-hoa",
+                "geolocation": {
+                    "latitude": 20.7356,
+                    "longitude": 105.7792
+                }
+            },
+            {
+                "value": "Mỹ Đức",
+                "label": "Mỹ Đức",
+                "slug": "my-duc",
+                "geolocation": {
+                    "latitude": 20.6958,
+                    "longitude": 105.7393
+                }
+            }
+        ],
+        "slug": "ha-noi",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ha_Noi.jpg?width=320"
+    },
+    {
+        "value": "Hồ Chí Minh",
+        "label": "Hồ Chí Minh",
+        "geolocation": {
+            "latitude": 10.823099,
+            "longitude": 106.629664
+        },
+        "districts": [
+            {
+                "value": "",
+                "label": "Tất cả quận/huyện",
+                "slug": "",
+                "geolocation": {
+                    "latitude": 10.823099,
+                    "longitude": 106.629664
+                }
+            },
+            {
+                "value": "Quận 1",
+                "label": "Quận 1",
+                "slug": "quan-1",
+                "geolocation": {
+                    "latitude": 10.7759,
+                    "longitude": 106.7009
+                }
+            },
+            {
+                "value": "Quận 3",
+                "label": "Quận 3",
+                "slug": "quan-3",
+                "geolocation": {
+                    "latitude": 10.7822,
+                    "longitude": 106.6842
+                }
+            },
+            {
+                "value": "Quận 4",
+                "label": "Quận 4",
+                "slug": "quan-4",
+                "geolocation": {
+                    "latitude": 10.757,
+                    "longitude": 106.7019
+                }
+            },
+            {
+                "value": "Quận 5",
+                "label": "Quận 5",
+                "slug": "quan-5",
+                "geolocation": {
+                    "latitude": 10.7543,
+                    "longitude": 106.6633
+                }
+            },
+            {
+                "value": "Quận 6",
+                "label": "Quận 6",
+                "slug": "quan-6",
+                "geolocation": {
+                    "latitude": 10.7523,
+                    "longitude": 106.6429
+                }
+            },
+            {
+                "value": "Quận 7",
+                "label": "Quận 7",
+                "slug": "quan-7",
+                "geolocation": {
+                    "latitude": 10.7301,
+                    "longitude": 106.7218
+                }
+            },
+            {
+                "value": "Quận 8",
+                "label": "Quận 8",
+                "slug": "quan-8",
+                "geolocation": {
+                    "latitude": 10.7248,
+                    "longitude": 106.6351
+                }
+            },
+            {
+                "value": "Quận 9",
+                "label": "Quận 9",
+                "slug": "quan-9",
+                "geolocation": {
+                    "latitude": 10.8445,
+                    "longitude": 106.8346
+                }
+            },
+            {
+                "value": "Quận 10",
+                "label": "Quận 10",
+                "slug": "quan-10",
+                "geolocation": {
+                    "latitude": 10.7769,
+                    "longitude": 106.667
+                }
+            },
+            {
+                "value": "Quận 11",
+                "label": "Quận 11",
+                "slug": "quan-11",
+                "geolocation": {
+                    "latitude": 10.7628,
+                    "longitude": 106.6469
+                }
+            },
+            {
+                "value": "Quận 12",
+                "label": "Quận 12",
+                "slug": "quan-12",
+                "geolocation": {
+                    "latitude": 10.8548,
+                    "longitude": 106.6286
+                }
+            },
+            {
+                "value": "Bình Tân",
+                "label": "Bình Tân",
+                "slug": "binh-tan",
+                "geolocation": {
+                    "latitude": 10.765,
+                    "longitude": 106.6205
+                }
+            },
+            {
+                "value": "Bình Thạnh",
+                "label": "Bình Thạnh",
+                "slug": "binh-thanh",
+                "geolocation": {
+                    "latitude": 10.8061,
+                    "longitude": 106.713
+                }
+            },
+            {
+                "value": "Gò Vấp",
+                "label": "Gò Vấp",
+                "slug": "go-vap",
+                "geolocation": {
+                    "latitude": 10.838,
+                    "longitude": 106.6765
+                }
+            },
+            {
+                "value": "Phú Nhuận",
+                "label": "Phú Nhuận",
+                "slug": "phu-nhuan",
+                "geolocation": {
+                    "latitude": 10.7995,
+                    "longitude": 106.6803
+                }
+            },
+            {
+                "value": "Tân Bình",
+                "label": "Tân Bình",
+                "slug": "tan-binh",
+                "geolocation": {
+                    "latitude": 10.8015,
+                    "longitude": 106.652
+                }
+            },
+            {
+                "value": "Tân Phú",
+                "label": "Tân Phú",
+                "slug": "tan-phu",
+                "geolocation": {
+                    "latitude": 10.7939,
+                    "longitude": 106.632
+                }
+            },
+            {
+                "value": "Thủ Đức",
+                "label": "Thủ Đức",
+                "slug": "thu-duc",
+                "geolocation": {
+                    "latitude": 10.8493,
+                    "longitude": 106.7536
+                }
+            },
+            {
+                "value": "Nhà Bè",
+                "label": "Nhà Bè",
+                "slug": "nha-be",
+                "geolocation": {
+                    "latitude": 10.6658,
+                    "longitude": 106.7011
+                }
+            },
+            {
+                "value": "Cần Giờ",
+                "label": "Cần Giờ",
+                "slug": "can-gio",
+                "geolocation": {
+                    "latitude": 10.4114,
+                    "longitude": 106.9547
+                }
+            },
+            {
+                "value": "Hóc Môn",
+                "label": "Hóc Môn",
+                "slug": "hoc-mon",
+                "geolocation": {
+                    "latitude": 10.8919,
+                    "longitude": 106.583
+                }
+            },
+            {
+                "value": "Củ Chi",
+                "label": "Củ Chi",
+                "slug": "cu-chi",
+                "geolocation": {
+                    "latitude": 11.0077,
+                    "longitude": 106.4989
+                }
+            }
+        ],
+        "slug": "ho-chi-minh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ho_Chi_Minh.jpg?width=320"
+    },
+    {
+        "value": "Đà Nẵng",
+        "label": "Đà Nẵng",
+        "geolocation": {
+            "latitude": 16.054407,
+            "longitude": 108.202167
+        },
+        "slug": "da-nang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Da_Nang.jpg?width=320"
+    },
+    {
+        "value": "Hải Phòng",
+        "label": "Hải Phòng",
+        "geolocation": {
+            "latitude": 20.844912,
+            "longitude": 106.688084
+        },
+        "slug": "hai-phong",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Hai_Phong.jpg?width=320"
+    },
+    {
+        "value": "Quảng Ninh",
+        "label": "Quảng Ninh",
+        "geolocation": {
+            "latitude": 21.006382,
+            "longitude": 107.292514
+        },
+        "slug": "quang-ninh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Quang_Ninh.jpg?width=320"
+    },
+    {
+        "value": "Bắc Ninh",
+        "label": "Bắc Ninh",
+        "geolocation": {
+            "latitude": 21.186088,
+            "longitude": 106.076379
+        },
+        "slug": "bac-ninh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Bac_Ninh.jpg?width=320"
+    },
+    {
+        "value": "Hải Dương",
+        "label": "Hải Dương",
+        "geolocation": {
+            "latitude": 20.937341,
+            "longitude": 106.314614
+        },
+        "slug": "hai-duong",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Hai_Duong.jpg?width=320"
+    },
+    {
+        "value": "Thái Bình",
+        "label": "Thái Bình",
+        "geolocation": {
+            "latitude": 20.4463,
+            "longitude": 106.3366
+        },
+        "slug": "thai-binh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Thai_Binh.jpg?width=320"
+    },
+    {
+        "value": "Bắc Giang",
+        "label": "Bắc Giang",
+        "geolocation": {
+            "latitude": 21.273007,
+            "longitude": 106.194213
+        },
+        "slug": "bac-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Bac_Giang.png?width=320"
+    },
+    {
+        "value": "Bà Rịa - Vũng Tàu",
+        "label": "Bà Rịa - Vũng Tàu",
+        "geolocation": {
+            "latitude": 10.541739,
+            "longitude": 107.242997
+        },
+        "slug": "ba-ria-vung-tau",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ba_Ria_Vung_Tau.jpg?width=320"
+    },
+    {
+        "value": "Hưng Yên",
+        "label": "Hưng Yên",
+        "geolocation": {
+            "latitude": 20.646083,
+            "longitude": 106.051079
+        },
+        "slug": "hung-yen",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Hung_Yen.jpg?width=320"
+    },
+    {
+        "value": "An Giang",
+        "label": "An Giang",
+        "geolocation": {
+            "latitude": 10.521583,
+            "longitude": 105.125896
+        },
+        "slug": "an-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/An_Giang.jpg?width=320"
+    },
+    {
+        "value": "Bắc Kạn",
+        "label": "Bắc Kạn",
+        "geolocation": {
+            "latitude": 22.147021,
+            "longitude": 105.834351
+        },
+        "slug": "bac-kan",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Bac_Can.jpg?width=320"
+    },
+    {
+        "value": "Bạc Liêu",
+        "label": "Bạc Liêu",
+        "geolocation": {
+            "latitude": 9.294113,
+            "longitude": 105.724271
+        },
+        "slug": "bac-lieu",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Bac_Lieu.jpg?width=320"
+    },
+    {
+        "value": "Bến Tre",
+        "label": "Bến Tre",
+        "geolocation": {
+            "latitude": 10.241471,
+            "longitude": 106.375557
+        },
+        "slug": "ben-tre",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ban_Tre.jpg?width=320"
+    },
+    {
+        "value": "Bình Định",
+        "label": "Bình Định",
+        "geolocation": {
+            "latitude": 14.166533,
+            "longitude": 108.902683
+        },
+        "slug": "binh-dinh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Binh_Dinh.jpg?width=320"
+    },
+    {
+        "value": "Bình Dương",
+        "label": "Bình Dương",
+        "geolocation": {
+            "latitude": 11.325402,
+            "longitude": 106.683083
+        },
+        "slug": "binh-duong",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Binh_Duong.jpg?width=320"
+    },
+    {
+        "value": "Bình Phước",
+        "label": "Bình Phước",
+        "geolocation": {
+            "latitude": 11.678473,
+            "longitude": 106.890715
+        },
+        "slug": "binh-phuoc",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Binh_Phuoc.jpg?width=320"
+    },
+    {
+        "value": "Bình Thuận",
+        "label": "Bình Thuận",
+        "geolocation": {
+            "latitude": 11.090644,
+            "longitude": 108.072079
+        },
+        "slug": "binh-thuan",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Binh_Thuan.jpg?width=320"
+    },
+    {
+        "value": "Cà Mau",
+        "label": "Cà Mau",
+        "geolocation": {
+            "latitude": 9.152895,
+            "longitude": 105.196078
+        },
+        "slug": "ca-mau",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ca_Mau.jpg?width=320"
+    },
+    {
+        "value": "Cần Thơ",
+        "label": "Cần Thơ",
+        "geolocation": {
+            "latitude": 10.045162,
+            "longitude": 105.746855
+        },
+        "slug": "can-tho",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Can_Tho.jpg?width=320"
+    },
+    {
+        "value": "Cao Bằng",
+        "label": "Cao Bằng",
+        "geolocation": {
+            "latitude": 22.666693,
+            "longitude": 106.266274
+        },
+        "slug": "cao-bang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Cao_Bang.jpg?width=320"
+    },
+    {
+        "value": "Đắk Lắk",
+        "label": "Đắk Lắk",
+        "geolocation": {
+            "latitude": 12.710012,
+            "longitude": 108.237751
+        },
+        "slug": "dak-lak",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Dak_Lak.jpg?width=320"
+    },
+    {
+        "value": "Đắk Nông",
+        "label": "Đắk Nông",
+        "geolocation": {
+            "latitude": 12.015093,
+            "longitude": 107.690493
+        },
+        "slug": "dak-nong",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Dak_Nong.webp?width=320"
+    },
+    {
+        "value": "Điện Biên",
+        "label": "Điện Biên",
+        "geolocation": {
+            "latitude": 21.386025,
+            "longitude": 103.023006
+        },
+        "slug": "dien-bien",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Dien_Bien.webp?width=320"
+    },
+    {
+        "value": "Đồng Nai",
+        "label": "Đồng Nai",
+        "geolocation": {
+            "latitude": 10.945271,
+            "longitude": 106.856396
+        },
+        "slug": "dong-nai",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Dong_Nai.jpg?width=320"
+    },
+    {
+        "value": "Đồng Tháp",
+        "label": "Đồng Tháp",
+        "geolocation": {
+            "latitude": 10.603722,
+            "longitude": 105.688178
+        },
+        "slug": "dong-thap",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Dong_Thap.jpg?width=320"
+    },
+    {
+        "value": "Gia Lai",
+        "label": "Gia Lai",
+        "geolocation": {
+            "latitude": 13.807894,
+            "longitude": 108.109375
+        },
+        "slug": "gia-lai",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Gia_Lai.jpg?width=320"
+    },
+    {
+        "value": "Hà Giang",
+        "label": "Hà Giang",
+        "geolocation": {
+            "latitude": 22.766205,
+            "longitude": 104.938885
+        },
+        "slug": "ha-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ha_Giang.webp?width=320"
+    },
+    {
+        "value": "Hà Nam",
+        "label": "Hà Nam",
+        "geolocation": {
+            "latitude": 20.583519,
+            "longitude": 105.921823
+        },
+        "slug": "ha-nam",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ha_Nam.webp?width=320"
+    },
+    {
+        "value": "Hà Tĩnh",
+        "label": "Hà Tĩnh",
+        "geolocation": {
+            "latitude": 18.342812,
+            "longitude": 105.905693
+        },
+        "slug": "ha-tinh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ha_Tinh.jpg?width=320"
+    },
+    {
+        "value": "Hậu Giang",
+        "label": "Hậu Giang",
+        "geolocation": {
+            "latitude": 9.78429,
+            "longitude": 105.470008
+        },
+        "slug": "hau-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Hau_Giang.jpg?width=320"
+    },
+    {
+        "value": "Hòa Bình",
+        "label": "Hòa Bình",
+        "geolocation": {
+            "latitude": 20.686126,
+            "longitude": 105.313119
+        },
+        "slug": "hoa-binh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Hoa_Binh.jpg?width=320"
+    },
+    {
+        "value": "Khánh Hòa",
+        "label": "Khánh Hòa",
+        "geolocation": {
+            "latitude": 12.258714,
+            "longitude": 109.052607
+        },
+        "slug": "khanh-hoa",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Khanh_Hoa.jpg?width=320"
+    },
+    {
+        "value": "Kiên Giang",
+        "label": "Kiên Giang",
+        "geolocation": {
+            "latitude": 10.012211,
+            "longitude": 105.080911
+        },
+        "slug": "kien-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Kien_Giang.jpg?width=320"
+    },
+    {
+        "value": "Kon Tum",
+        "label": "Kon Tum",
+        "geolocation": {
+            "latitude": 14.661167,
+            "longitude": 107.837456
+        },
+        "slug": "kon-tum",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Kon_Tum.jpg?width=320"
+    },
+    {
+        "value": "Lai Châu",
+        "label": "Lai Châu",
+        "geolocation": {
+            "latitude": 22.396428,
+            "longitude": 103.458749
+        },
+        "slug": "lai-chau",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Lai_Chau.jpg?width=320"
+    },
+    {
+        "value": "Lâm Đồng",
+        "label": "Lâm Đồng",
+        "geolocation": {
+            "latitude": 11.575279,
+            "longitude": 108.142866
+        },
+        "slug": "lam-dong",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Lam_Dong.webp?width=320"
+    },
+    {
+        "value": "Lạng Sơn",
+        "label": "Lạng Sơn",
+        "geolocation": {
+            "latitude": 21.845621,
+            "longitude": 106.726918
+        },
+        "slug": "lang-son",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Lang_Son.jpg?width=320"
+    },
+    {
+        "value": "Lào Cai",
+        "label": "Lào Cai",
+        "geolocation": {
+            "latitude": 22.485979,
+            "longitude": 103.970654
+        },
+        "slug": "lao-cai",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Lao_Cai.jpg?width=320"
+    },
+    {
+        "value": "Long An",
+        "label": "Long An",
+        "geolocation": {
+            "latitude": 10.543144,
+            "longitude": 106.405129
+        },
+        "slug": "long-an",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Long_An.jpg?width=320"
+    },
+    {
+        "value": "Nam Định",
+        "label": "Nam Định",
+        "geolocation": {
+            "latitude": 20.43734,
+            "longitude": 106.162105
+        },
+        "slug": "nam-dinh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Nam_Dinh.gif?width=320"
+    },
+    {
+        "value": "Nghệ An",
+        "label": "Nghệ An",
+        "geolocation": {
+            "latitude": 19.234248,
+            "longitude": 104.920036
+        },
+        "slug": "nghe-an",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Nghe_An.jpg?width=320"
+    },
+    {
+        "value": "Ninh Bình",
+        "label": "Ninh Bình",
+        "geolocation": {
+            "latitude": 20.250614,
+            "longitude": 105.974453
+        },
+        "slug": "ninh-binh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ninh_Binh.jpg?width=320"
+    },
+    {
+        "value": "Ninh Thuận",
+        "label": "Ninh Thuận",
+        "geolocation": {
+            "latitude": 11.673792,
+            "longitude": 108.987263
+        },
+        "slug": "ninh-thuan",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Ninh_Thuan.jpg?width=320"
+    },
+    {
+        "value": "Phú Thọ",
+        "label": "Phú Thọ",
+        "geolocation": {
+            "latitude": 21.319062,
+            "longitude": 105.199013
+        },
+        "slug": "phu-tho",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Phu_Tho.jpg?width=320"
+    },
+    {
+        "value": "Phú Yên",
+        "label": "Phú Yên",
+        "geolocation": {
+            "latitude": 13.088186,
+            "longitude": 109.092876
+        },
+        "slug": "phu-yen",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Phu_Yen.jpg?width=320"
+    },
+    {
+        "value": "Quảng Bình",
+        "label": "Quảng Bình",
+        "geolocation": {
+            "latitude": 17.610982,
+            "longitude": 106.348747
+        },
+        "slug": "quang-binh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Quang_Binh.jpg?width=320"
+    },
+    {
+        "value": "Quảng Nam",
+        "label": "Quảng Nam",
+        "geolocation": {
+            "latitude": 15.539353,
+            "longitude": 108.019102
+        },
+        "slug": "quang-nam",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Quang_Nam.jpg?width=320"
+    },
+    {
+        "value": "Quảng Ngãi",
+        "label": "Quảng Ngãi",
+        "geolocation": {
+            "latitude": 15.120473,
+            "longitude": 108.792168
+        },
+        "slug": "quang-ngai",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Quang_Ngai.jpg?width=320"
+    },
+    {
+        "value": "Quảng Trị",
+        "label": "Quảng Trị",
+        "geolocation": {
+            "latitude": 16.794934,
+            "longitude": 107.085717
+        },
+        "slug": "quang-tri",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Quang_Tri.jpg?width=320"
+    },
+    {
+        "value": "Sóc Trăng",
+        "label": "Sóc Trăng",
+        "geolocation": {
+            "latitude": 9.6038,
+            "longitude": 105.9805
+        },
+        "slug": "soc-trang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Soc_Trang.jpg?width=320"
+    },
+    {
+        "value": "Sơn La",
+        "label": "Sơn La",
+        "geolocation": {
+            "latitude": 21.3286,
+            "longitude": 103.9144
+        },
+        "slug": "son-la",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Son_La.jpg?width=320"
+    },
+    {
+        "value": "Tây Ninh",
+        "label": "Tây Ninh",
+        "geolocation": {
+            "latitude": 11.3554,
+            "longitude": 106.1304
+        },
+        "slug": "tay-ninh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Tay_Ninh.jpg?width=320"
+    },
+    {
+        "value": "Thái Nguyên",
+        "label": "Thái Nguyên",
+        "geolocation": {
+            "latitude": 21.5672,
+            "longitude": 105.8392
+        },
+        "slug": "thai-nguyen",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Thai_Nguyen.jpg?width=320"
+    },
+    {
+        "value": "Thanh Hóa",
+        "label": "Thanh Hóa",
+        "geolocation": {
+            "latitude": 19.8067,
+            "longitude": 105.7852
+        },
+        "slug": "thanh-hoa",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Thanh_Hoa.jpg?width=320"
+    },
+    {
+        "value": "Thừa Thiên Huế",
+        "label": "Thừa Thiên Huế",
+        "geolocation": {
+            "latitude": 16.4674,
+            "longitude": 107.5905
+        },
+        "slug": "thua-thien-hue",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Thua_Thien_Hue.jpg?width=320"
+    },
+    {
+        "value": "Tiền Giang",
+        "label": "Tiền Giang",
+        "geolocation": {
+            "latitude": 10.4493,
+            "longitude": 106.3421
+        },
+        "slug": "tien-giang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Tien_Giang.jpg?width=320"
+    },
+    {
+        "value": "Trà Vinh",
+        "label": "Trà Vinh",
+        "geolocation": {
+            "latitude": 9.9475,
+            "longitude": 106.3441
+        },
+        "slug": "tra-vinh",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Tra_Vinh.jpg?width=320"
+    },
+    {
+        "value": "Tuyên Quang",
+        "label": "Tuyên Quang",
+        "geolocation": {
+            "latitude": 21.8238,
+            "longitude": 105.2141
+        },
+        "slug": "tuyen-quang",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Tuyen_Quang.jpg?width=320"
+    },
+    {
+        "value": "Vĩnh Long",
+        "label": "Vĩnh Long",
+        "geolocation": {
+            "latitude": 10.2537,
+            "longitude": 105.9722
+        },
+        "slug": "vinh-long",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Vinh_Long.jpg?width=320"
+    },
+    {
+        "value": "Vĩnh Phúc",
+        "label": "Vĩnh Phúc",
+        "geolocation": {
+            "latitude": 21.3085,
+            "longitude": 105.6031
+        },
+        "slug": "vinh-phuc",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Vinh_Phuc.jpg?width=320"
+    },
+    {
+        "value": "Yên Bái",
+        "label": "Yên Bái",
+        "geolocation": {
+            "latitude": 21.7229,
+            "longitude": 104.9113
+        },
+        "slug": "yen-bai",
+        "image": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Yen_Bai.jpg?width=320"
+    }
+]

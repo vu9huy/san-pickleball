@@ -1,0 +1,26 @@
+.social-court-form-container {}
+
+.social-court-form-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.social-court-form-link {
+    padding: 4px 0 8px;
+}
+
+.social-court-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 45%;
+}
+
+@media screen and (max-width: 768px) {
+    .social-court-form-field {
+        width: 100%;
+    }
+}

@@ -1,0 +1,25 @@
+.user-modal-container {
+    position: relative;
+}
+
+.user-modal-show {
+    cursor: pointer;
+    /* padding: 12px; */
+}
+
+.user-modal-hidden {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    z-index: 10;
+
+    margin-top: 4px;
+
+    transition: transform .5s;
+    transform: scaleY(0);
+    transform-origin: 100% 0;
+}
+
+.user-modal-hidden.display {
+    transform: scaleY(1);
+}

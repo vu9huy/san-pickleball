@@ -1,0 +1,29 @@
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+    font-size: 15px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+    background-color: var(--primary-color) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+    overflow-x: visible !important;
+}
+
+.react-datepicker__time-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.react-datepicker__time-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.react-datepicker__time-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+.time-picker {
+    width: 70px;
+    padding: 8px;
+    text-align: center;
+}

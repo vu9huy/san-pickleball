@@ -1,0 +1,163 @@
+.guide-card-container {
+    position: relative;
+}
+
+.guide-card-container .guide-card {
+    width: 100%;
+    /* max-width: 300px; */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+}
+
+.featured {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.featured .guide-card {
+    flex-direction: column;
+
+}
+
+.normal {}
+
+.normal .guide-card {
+    flex-direction: row;
+}
+
+.guide-image {
+    position: relative;
+}
+
+.guide-image .guide-card-link {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+}
+
+/* Image Styling */
+.featured .guide-image {
+    max-height: 50%;
+}
+
+.normal .guide-image {
+    width: 50%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.guide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Styling */
+.guide-card-container .guide-content {
+    padding: 16px;
+}
+
+.normal .guide-content {
+    width: 50%;
+}
+
+/* Tag Styling */
+.guide-card-container .guide-tag {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #0077b6;
+    font-size: 0.75em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* Title Styling */
+.guide-card-container .guide-title {
+    font-size: 1.25em;
+    color: #333;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.guide-title:hover {
+    color: var(--primary-color);
+}
+
+/* Time Styling */
+.guide-card-container .guide-time {
+    display: block;
+    font-size: 0.875em;
+    color: #757575;
+    margin-top: 4px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .featured {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    .normal {
+        grid-row: 2 / 3;
+    }
+
+    .featured .guide-card {
+        flex-direction: row;
+    }
+
+    .normal .guide-card {
+        flex-direction: column;
+    }
+
+    .featured .guide-card .guide-image {
+        max-height: 100%;
+        width: 50%;
+    }
+
+    .normal .guide-card .guide-image {
+        width: 100%;
+        height: 50%;
+    }
+
+    .normal .guide-card .guide-content {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .featured .guide-card {
+        flex-direction: column;
+    }
+
+    .featured .guide-card .guide-image {
+        /* max-height: 50%; */
+        height: 200px;
+        width: 100%;
+    }
+
+    .normal .guide-card .guide-image {
+        /* max-height: 50%; */
+        height: 200px;
+    }
+
+
+    .normal {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}

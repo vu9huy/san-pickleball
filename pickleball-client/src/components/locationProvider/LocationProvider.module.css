@@ -1,0 +1,562 @@
+/* Container */
+.container {
+    margin: 0 auto 20px auto;
+    font-family: system-ui, sans-serif;
+}
+
+.card {
+    background-color: var(--bg);
+    border-radius: 12px;
+}
+
+/* Requirement Alert */
+.requirementAlert {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 1px solid #f59e0b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.requirementIcon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.requirementContent {
+    flex: 1;
+}
+
+.requirementTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #92400e;
+    margin: 0 0 8px 0;
+}
+
+.requirementText {
+    font-size: 14px;
+    color: #a16207;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Current Location Status */
+.currentLocationStatus {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.statusIcon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.statusContent {
+    flex: 1;
+}
+
+.statusTitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000; /* Changed to black color */
+    margin: 0 0 8px 0;
+}
+
+.statusText {
+    font-size: 17px; /* Increased from 14px */
+    color: var(--primary-color); /* Changed to primary color for highlighting */
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 600; /* Added font weight for better highlighting */
+}
+
+.changeLocationBtn {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.changeLocationBtn:hover:not(:disabled) {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Header */
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.description {
+    color: var(--text-light-1);
+    margin-bottom: 32px;
+}
+
+/* Loading State */
+.loadingContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loadingCard {
+    padding: 40px;
+    border: 2px solid var(--text-light-2);
+    border-radius: 12px;
+    background-color: var(--soft-bg);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--text-light-2);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+.smallSpinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Login Required */
+.loginContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.loginCard {
+    border: 2px solid var(--text-light-2);
+    border-radius: 12px;
+}
+
+.loginTitle {
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.loginText {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.authButtonContainer {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.primaryButton {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primaryButton:hover:not(:disabled) {
+    background-color: var(--heavy-primary-color);
+    transform: translateY(-1px);
+}
+
+.secondaryButton {
+    padding: 12px 20px;
+    border: 2px solid var(--text-light-1);
+    border-radius: 8px;
+    background-color: var(--bg);
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.secondaryButton:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background-color: var(--soft-bg);
+    transform: translateY(-1px);
+}
+
+.backButtonContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.backButton {
+    padding: 8px 16px;
+    border: 1px solid var(--text-light-1);
+    border-radius: 6px;
+    background-color: var(--bg);
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.backButton:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background-color: var(--soft-bg);
+    transform: translateY(-1px);
+}
+
+.get-location-method {
+    padding: 20px;
+    border: 2px solid var(--text-light-2);
+    border-radius: 12px;
+    background-color: var(--bg);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.get-location-method:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background-color: var(--soft-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 201, 61, 0.15);
+}
+
+/* Disabled State for all buttons */
+.buttonDisabled,
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.get-location-method:disabled,
+.changeLocationBtn:disabled,
+.backButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none !important;
+    background-color: var(--disable-primary-color) !important;
+    color: white !important;
+    border-color: var(--disable-primary-color) !important;
+}
+
+.secondaryButton:disabled,
+.backButton:disabled {
+    background-color: transparent !important;
+    color: var(--disable-primary-color) !important;
+}
+
+/* Messages */
+.errorMessage {
+    padding: 12px 16px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: var(--dangerous-color);
+    margin-bottom: 20px;
+}
+
+.successMessage {
+    padding: 12px 16px;
+    background-color: #f0fdf4;
+    border: 1px solid var(--light-primary-color);
+    border-radius: 8px;
+    color: var(--heavy-primary-color);
+    margin-bottom: 20px;
+}
+
+/* Location Method Selection */
+.methodGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.methodIcon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.methodTitle {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.methodDescription {
+    color: var(--text-light-1);
+    font-size: 16px;
+}
+
+/* Address Display */
+.addressContainer {
+    padding: 20px;
+    background-color: #f0fdf4;
+    border: 1px solid var(--light-primary-color);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.addressTitle {
+    color: var(--heavy-primary-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.addressContent {
+    color: var(--text-dark);
+}
+
+.addressDisplayName {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.addressDetails {
+    margin-bottom: 16px;
+}
+
+.addressDetails > p {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.addressDetailsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.addressDetailsList li {
+    padding: 4px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(138, 201, 61, 0.1);
+}
+
+.addressDetailsList li:last-child {
+    border-bottom: none;
+}
+
+.addressCoordinates {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.locationResultAccuracy {
+    color: var(--heavy-primary-color);
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Browser Location Result (keeping for backward compatibility) */
+.locationResult {
+    padding: 16px;
+    background-color: #f0fdf4;
+    border: 1px solid var(--light-primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.locationResultTitle {
+    color: var(--heavy-primary-color);
+    margin-bottom: 8px;
+}
+
+.locationResultText {
+    color: var(--text-dark);
+}
+
+/* Manual Location Selection */
+.manualLocationContainer {
+    margin-bottom: 20px;
+}
+
+.manualLocationTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+/* SelectAddress Styles */
+.selectAddressContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.selectAddressItem {
+    width: 100%;
+}
+
+.selectAddressLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.selectAddressLabelValue {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* Detail Address Input */
+.detailAddressContainer {
+    width: 100%;
+}
+
+.detailAddressInput {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 2px solid var(--text-light-2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: var(--bg);
+    transition: border-color 0.2s;
+    color: var(--text-dark);
+}
+
+.detailAddressInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.detailAddressInput::placeholder {
+    color: var(--text-light-1);
+}
+
+/* Get Address Button */
+.getAddressButtonContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .requirementAlert,
+    .currentLocationStatus {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .requirementIcon,
+    .statusIcon {
+        font-size: 32px;
+        margin-top: 0;
+    }
+    
+    .requirementTitle,
+    .statusTitle {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+    
+    .requirementText,
+    .statusText {
+        font-size: 15px; /* Adjusted for mobile to maintain readability */
+    }
+
+    .changeLocationBtn {
+        align-self: center;
+        margin-top: 8px;
+    }
+
+    .methodGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .selectAddressContainer {
+        gap: 16px;
+    }
+    
+    .actionButtons {
+        flex-direction: column;
+    }
+    
+    .authButtonContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container {
+        /* padding: 16px; */
+    }
+    
+    .card {
+        /* padding: 24px; */
+    }
+    
+    .addressDetailsList li {
+        font-size: 13px;
+    }
+    
+    .primaryButton,
+    .secondaryButton,
+    .changeLocationBtn,
+    .backButton {
+        width: 100%;
+        justify-content: center;
+    }
+}

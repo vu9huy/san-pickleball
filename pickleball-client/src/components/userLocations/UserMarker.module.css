@@ -1,0 +1,31 @@
+/* UserMarker styles */
+/* Most styling is handled by the Google Maps Marker component */
+/* Additional custom marker styles can be added here if needed */
+
+.customMarker {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.customMarker:hover {
+  transform: scale(1.1);
+}
+
+.markerIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.markerIcon img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}

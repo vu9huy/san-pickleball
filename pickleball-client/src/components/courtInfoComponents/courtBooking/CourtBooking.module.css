@@ -1,0 +1,54 @@
+.court-booking-container {
+    padding-top: 24px;
+}
+
+.court-booking-container>h2 {
+    padding-top: 32px;
+}
+
+.court-booking-container.border-top {
+    border-top: 1px solid #cccccc;
+}
+
+.court-booking-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.court-booking-container-wrapper-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.court-booking-container-day-sessions-time {
+    margin: 12px 0;
+}
+
+.court-booking-container-day-sessions-time label {
+    font-weight: 600;
+}
+
+.court-booking-container-day-sessions-time-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: wrap;
+}

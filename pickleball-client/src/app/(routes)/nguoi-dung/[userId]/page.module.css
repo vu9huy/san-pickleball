@@ -1,0 +1,16 @@
+.nguoi-dung-container {}
+
+.nguoi-dung-field {
+    padding-bottom: 20px;
+}
+
+.nguoi-dung-field label {
+    display: inline-block;
+    min-width: 150px;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.nguoi-dung-field input {
+    cursor: not-allowed;
+}

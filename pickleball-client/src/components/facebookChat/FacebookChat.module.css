@@ -1,0 +1,16 @@
+.facebook-chat-container {
+    position: fixed;
+    z-index: 100000;
+    bottom: 48px;
+    right: 20px;
+}
+
+.facebook-chat-image {
+    width: 60px;
+    height: 60px;
+}
+
+.facebook-chat-image img {
+    width: 100%;
+    height: auto;
+}

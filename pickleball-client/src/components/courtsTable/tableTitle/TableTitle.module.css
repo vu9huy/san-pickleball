@@ -1,0 +1,41 @@
+.table-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.table-title-create-court {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.table-title-create-court button {
+    width: fit-content;
+}
+
+.table-title-create-court p {
+    max-width: 260px;
+    text-align: end;
+}
+
+.quan-ly-san-list-court {}
+
+.table-title-court-button {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+@media screen and (max-width: 500px) {
+    .table-title-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .table-title-create-court {
+        align-items: flex-start;
+    }
+}

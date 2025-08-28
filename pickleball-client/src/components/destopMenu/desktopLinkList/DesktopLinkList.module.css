@@ -1,0 +1,128 @@
+.desktop-link-list-container {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.desktop-link-item {
+    padding: 16px 8px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--font-barlow-condensed);
+}
+
+.desktop-link-item:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 1;
+    top: auto;
+    bottom: 7px;
+    left: 5%;
+    right: auto;
+    height: 3px;
+    transform: none;
+    width: 0;
+    transition: all 0.3s ease;
+    background-color: #99de47;
+}
+
+.desktop-link-item.link-active:after {
+    width: 90%;
+}
+
+.desktop-link-item:hover:after {
+    width: 90%;
+}
+
+.desktop-link-children-item {
+    text-transform: capitalize;
+    font-weight: 300;
+}
+
+.desktop-link-children-item a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 16px;
+}
+
+.desktop-link-children-item a {
+    position: relative;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(0px);
+}
+
+.desktop-link-children-item a:hover {
+    display: inline-block;
+    color: #ffffff;
+    word-break: break-word;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(10px);
+}
+
+.desktop-link-children-item.link-active {
+    color: #ffffff;
+    transform: translateX(10px);
+}
+
+.desktop-link-children-item.link-active a:hover {
+    transform: translateX(0px);
+}
+
+.desktop-link-children-item a span {
+    position: relative;
+}
+
+.desktop-link-children-item a span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    bottom: -4px;
+    height: 2px;
+    transform: none;
+    width: 0;
+    background-color: #ffffff;
+}
+
+.desktop-link-children-item.link-active span:after {
+    width: 100%;
+}
+
+.desktop-link-children-item a:hover span:after {
+    width: 100%;
+}
+
+.desktop-link-item:hover .desktop-link-children-list {
+    visibility: visible;
+}
+
+.desktop-link-children-list {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    right: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--dark-bg);
+    color: var(--text-light-2);
+    width: 150px;
+    padding: 12px 0;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.desktop-link-children-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+}

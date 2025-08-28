@@ -1,0 +1,52 @@
+.utilities-court-form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: no-wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.utilities-court-form-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 90%;
+}
+
+.utilities-court-form-name {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.utilities-court-form-description {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.utilities-court-form-remove-button {}
+
+.utilities-court-form-add-button {}
+
+@media screen and (max-width: 768px) {
+
+    .utilities-court-form-field {
+        flex-wrap: wrap;
+    }
+
+    .utilities-court-form-input-wrapper {
+        width: 100%;
+    }
+
+    .utilities-court-form-name {
+        width: 100%;
+    }
+
+    .utilities-court-form-description {
+        width: 100%;
+    }
+}

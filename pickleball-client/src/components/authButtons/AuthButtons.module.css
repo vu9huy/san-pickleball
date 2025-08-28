@@ -1,0 +1,13 @@
+.auth-link-login {
+    padding: 12px 14px;
+}
+
+.auth-link-register {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 16px;
+}
+.auth-link-register:hover{
+    border: 2px solid var(--heavy-primary-color);
+}

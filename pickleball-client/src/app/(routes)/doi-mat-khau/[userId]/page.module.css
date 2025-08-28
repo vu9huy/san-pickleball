@@ -1,0 +1,44 @@
+.doi-mat-khau-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 650px;
+}
+
+.doi-mat-khau-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.doi-mat-khau-field label {
+    display: inline-block;
+    min-width: 200px;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.doi-mat-khau-input-wrapper {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+}
+
+.show-password {
+    position: absolute;
+    top: 4px;
+    right: 0;
+}
+
+.doi-mat-khau-field input {
+    width: 100%;
+}
+
+.doi-mat-khau-button {
+    width: fit-content;
+}
+
+.doi-mat-khau-error {
+    color: red;
+    font-size: 14px;
+}

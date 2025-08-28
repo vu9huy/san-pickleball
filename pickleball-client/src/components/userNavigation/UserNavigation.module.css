@@ -1,0 +1,25 @@
+.user-navigation-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.user-navigation-container p {
+    font-weight: 600;
+}
+
+.user-navigation-container select {
+    min-width: 200px;
+    height: 35px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.user-navigation-container select:focus {
+    outline-color: var(--primary-color);
+}

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sanpickleball",
+  "private_key_id": "2874c58ee9936a3d8eb07049d37df5a03ed2a0fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCxTK839kiVyIG3\nfIOOyl3g/fmaoXizIpPv3shxWHWEB7HQbzn8Y5UR9S9zV0oFCHvvZj/wpG1MwlC5\n1p05uNtZ6BoCEqSVQrdFAGsp29sUCjI9kGIH80mbk5vfv5uce0WoIOisXnmD03v4\nfpgXIjZYZ/mTD5wcSHKk/Ia4jlr4CGau6xInwZEQ2nM90c8Z4oNmdt52sbH9Zr4X\nMnBCgGtii2ImRe98phwynBnft6aSs76rFOTlXmHUJjgdQ3/vm/hlUoz8Rx3XVqmg\nHmlrCvu0n3OtIIH7ekLGcgd5TWEoIi0CzrSrqS2WPlhDZnRfYi1prXwmmpCEJ1Es\ns7DLzI6lAgMBAAECgf9Ugj6OCy1q8bjiqys4akiPQTmmry2Y7yJaW/70ZN5Y55fT\n9kd49EQrIlvHUs4eAMSGgF8FZkMnKne4qGprkytXwMQZLTJola/oRVCghgImhViQ\nC0fGAllTd0gsKdy2nH+/72QPUIRg4tuLp+L5gPJDgsAnXnIcCQ8nzx7cQecOuoNm\n9lPUkRpw3fh71I7suoEWleQcBID8fNgLkalLieMAyaYYMHgluSJoYHucQ/i27V1R\nEtFsfGoAbXvacKE2Zext40TaP5SL+XgshtGoWmJ5g4pXBTCskN8DF/vuK1IIJ4+q\npE/Pmrcwp9XJqhtK29nm41xVmbPXHZA1GIwoAZkCgYEA6yEcGQEgnW6FnauhSUEP\nOUtTcOx/mZc4hq64NLGrRUqUhC3MmEriRvpK6AVs7kVJ1yeFawOHQxD1SanoYTUs\n7jSuBkHGSUJpoOUVB/E6hX6M8eCffYNVCZt520/ns4jsgsKEqDbap0mzQjIYqkq6\nK9vnwTXWmsiPL6nStd4KMlkCgYEAwQl/PtGxKNSBpkAqnhsq+yYntwlcuRORISrd\njGJmn7xunAlPrSwdvZTj5pdBcN7EecPGHz79v5GyRe2glFLoPvQmU9+D4UP91OA8\ndk6u8tRlWGJ6FpwJYMUyQZFaqYdTgknH7LRNom7bnVCT3SXxFgjDs4MiAUz5daiY\nKSzGvS0CgYEAip2eXu9XNvitNOK11uXP/8r0iiIip32LCXt/hTEo81Sgcbw+XZno\nBEgSWO655U5b1ceq1AfkehlJQgA0yvn6XwQXhADK0O2iMARdfa0s/v44QXBXFjuS\nqnNKR4y34BPcusnKQxDznqPIVkIKYHplfu3JlxISTnXmVAcd/bHE+SECgYBO2+dc\nrWNXT8ELPslqP6UGZqbw0mVLwl+WkiFh2U0dUmhJXFBtaUlZCnsz13THfGn9aGoG\nl8Anw4h1osbn8RqppSoHN5dzrkgC7/wjRK+ZygUA33IKzIHUQ5rtSEkmWn9WCXgg\nDeRtSCZ1lNZjEL31h20TZ627pEuAsng+0ej6nQKBgCVlv+HRWzfqUOq147fq/QXf\nX/yvcXBzKNzBDhXYOBggY32l6pV6DlbGMwNWsDn3RJogQDCe8BTtfey+Cm3qtEjY\nRhPzvOUd10sHf7Ec/4fz376mXJUk8gSOlo2r0LDv+PEuATWPpKMvRdMoxNCk/hHp\n4sYqwWJc3Js3QfAjWgGm\n-----END PRIVATE KEY-----\n",
+  "client_email": "ga4-api@sanpickleball.iam.gserviceaccount.com",
+  "client_id": "114021472375509720884",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ga4-api%40sanpickleball.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,24 @@
+.court-booking-explication-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.court-booking-explication-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    gap: 6px;
+}
+
+.court-booking-explication-item-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dddddd;
+}
+
+.court-booking-explication-item-label {}

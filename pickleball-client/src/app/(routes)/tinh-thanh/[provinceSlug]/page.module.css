@@ -1,0 +1,29 @@
+.province-detail-courts-container {}
+
+.province-detail-courts-container h1 {
+    margin-bottom: 32px;
+}
+
+.province-detail-courts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media screen and (max-width: 1280px) {
+    .province-detail-courts-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .province-detail-courts-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .province-detail-courts-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

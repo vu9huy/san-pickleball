@@ -1,0 +1,36 @@
+.upload-image-container {
+    width: 100%;
+    /* max-width: 600px; */
+    margin: auto;
+}
+
+.upload-image-dropzone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upload-image-util {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.upload-image-previews {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.upload-image-warning {}
+
+.upload-image-warning-message {
+    color: red;
+}

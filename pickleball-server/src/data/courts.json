@@ -1,0 +1,1378 @@
+[
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d1"
+      },
+      "name": "Hà Nội Pickleball Center",
+      "description": "A modern pickleball center located in the heart of Hà Nội.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ"
+      },
+      "location": {
+          "address": "123 Hoàn Kiếm, Hoàn Kiếm District",
+          "province": "Hà Nội",
+          "district": "Hoàn Kiếm"
+      },
+      "geolocation": {
+          "latitude": 21.028511,
+          "longitude": 105.848217
+      },
+      "numberOfCourts": 4,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2024-06-16.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66b5f2be2de9f111f4a324ac"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-06-03.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66b5f2be2de9f111f4a324ad"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2021-08-17.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66b5f2be2de9f111f4a324ae"
+              }
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": true,
+          "lighted": false,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Quầy bar",
+              "description": "Quầy bar với đầy đủ các loại đồ uống",
+              "_id": {
+                  "$oid": "66b578e6eea2cca1925cee3b"
+              }
+          },
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô",
+              "_id": {
+                  "$oid": "66b578e6eea2cca1925cee3c"
+              }
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66b578e6eea2cca1925cee3d"
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66b578e6eea2cca1925cee3e"
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000,
+                  "_id": {
+                      "$oid": "66b578e6eea2cca1925cee3f"
+                  }
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "__v": 4,
+      "updatedAt": {
+          "$date": "2024-08-09T10:43:10.302Z"
+      },
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": true,
+          "trainer": true,
+          "parking_spaces": false,
+          "equipment_store": false,
+          "equipment_rental": true,
+          "equipment_free": false,
+          "wifi": true,
+          "spectator_areas": true,
+          "break_areas": false
+      },
+      "surface": "asphalt"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d2"
+      },
+      "name": "Hoàn Kiếm Pickleball Club111111111",
+      "description": "Friendly club with excellent facilities.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ"
+      },
+      "location": {
+          "address": "456 Trần Hưng Đạo, Hoàn Kiếm District",
+          "province": "Hà Nội",
+          "district": "Hoàn Kiếm"
+      },
+      "geolocation": {
+          "latitude": 21.028843,
+          "longitude": 105.850275
+      },
+      "numberOfCourts": 2,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2022-10-12hgghhg.jpg?v=1719413940",
+              "alt": "Hoàn Kiếm Pickleball Club Court",
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098aa"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2022-10-12gfgfgf.jpg?v=1719413940",
+              "alt": "Hoàn Kiếm Pickleball Club Court",
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098ab"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2022-10-12.jpg?v=1719413939",
+              "alt": "Hoàn Kiếm Pickleball Club Court",
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098ac"
+              }
+          }
+      ],
+      "feature": {
+          "indoor": true,
+          "outdoor": true,
+          "lighted": false,
+          "covered": true
+      },
+      "utilities": [
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí",
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098ad"
+              }
+          },
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô",
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098ae"
+              }
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098af"
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66a85b2f13c007f2158098b0"
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000,
+                  "_id": {
+                      "$oid": "66a85b2f13c007f2158098b1"
+                  }
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "__v": 1,
+      "updatedAt": {
+          "$date": "2024-07-30T03:51:47.706Z"
+      },
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": false,
+          "trainer": true,
+          "parking_spaces": false,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": true,
+          "wifi": false,
+          "spectator_areas": true,
+          "break_areas": true
+      },
+      "surface": "acrylic"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d3"
+      },
+      "name": "HCMC Pickleball Arena",
+      "description": "Top-notch pickleball courts in Hồ Chí Minh City.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "789 Nguyễn Huệ, Quận 1",
+          "province": "Hồ Chí Minh",
+          "district": "Quận 1"
+      },
+      "geolocation": {
+          "latitude": 10.773195,
+          "longitude": 106.703497
+      },
+      "numberOfCourts": 3,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-10-26.jpg?v=1719413979",
+              "alt": "HCMC Pickleball Arena Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-09-27.jpg?v=1719413979",
+              "alt": "HCMC Pickleball Arena Court"
+          }
+      ],
+      "feature": {
+          "indoor": true,
+          "outdoor": false,
+          "lighted": true,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": true,
+          "locker_room": true,
+          "restroom": false,
+          "trainer": false,
+          "parking_spaces": false,
+          "equipment_store": false,
+          "equipment_rental": true,
+          "equipment_free": true,
+          "wifi": true,
+          "spectator_areas": true,
+          "break_areas": true
+      },
+      "surface": "acrylic"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d4"
+      },
+      "name": "Đà Nẵng Pickleball Park",
+      "description": "Beautiful outdoor pickleball courts by the beach.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "321 Võ Nguyên Giáp, Ngũ Hành Sơn",
+          "province": "Đà Nẵng",
+          "district": "Ngũ Hành Sơn"
+      },
+      "geolocation": {
+          "latitude": 16.047079,
+          "longitude": 108.237674
+      },
+      "numberOfCourts": 5,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/ghhggh.jpg?v=1719414007",
+              "alt": "Đà Nẵng Pickleball Park Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/uhkjjk.jpg?v=1719414007",
+              "alt": "Đà Nẵng Pickleball Park Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/yghhgh.jpg?v=1719414007",
+              "alt": "Đà Nẵng Pickleball Park Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-10-13.jpg?v=1719414007",
+              "alt": "Đà Nẵng Pickleball Park Court"
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": false,
+          "lighted": true,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": false,
+          "trainer": false,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": false,
+          "wifi": true,
+          "spectator_areas": false,
+          "break_areas": true
+      },
+      "surface": "carpet"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d5"
+      },
+      "name": "Hải Phòng Pickleball Community Center",
+      "description": "Community-focused pickleball courts.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "654 Lê Lợi, Ngô Quyền",
+          "province": "Hải Phòng",
+          "district": "Ngô Quyền"
+      },
+      "geolocation": {
+          "latitude": 20.844911,
+          "longitude": 106.688083
+      },
+      "numberOfCourts": 3,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-05-28.jpg?v=1719414055",
+              "alt": "Hải Phòng Pickleball Community Center Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2024-05-01.jpg?v=1719414055",
+              "alt": "Hải Phòng Pickleball Community Center Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/IMG_3843.jpg?v=1719414055",
+              "alt": "Hải Phòng Pickleball Community Center Court"
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": false,
+          "lighted": true,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": true,
+          "locker_room": true,
+          "restroom": true,
+          "trainer": false,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": true,
+          "wifi": true,
+          "spectator_areas": true,
+          "break_areas": true
+      },
+      "surface": "wood"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d6"
+      },
+      "name": "Phú Nhuận Pickleball Courts",
+      "description": "Conveniently located courts in Phú Nhuận District.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "987 Phan Xích Long, Phú Nhuận District",
+          "province": "Hồ Chí Minh",
+          "district": "Phú Nhuận"
+      },
+      "geolocation": {
+          "latitude": 10.799891,
+          "longitude": 106.688123
+      },
+      "numberOfCourts": 4,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2024-05-24.jpg?v=1719414098",
+              "alt": "Phú Nhuận Pickleball Courts"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2024-05-20.jpg?v=1719414097",
+              "alt": "Phú Nhuận Pickleball Courts"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-12-16.jpg?v=1719414097",
+              "alt": "Phú Nhuận Pickleball Courts"
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": true,
+          "lighted": false,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": true,
+          "trainer": true,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": true,
+          "equipment_free": true,
+          "wifi": true,
+          "spectator_areas": false,
+          "break_areas": true
+      },
+      "surface": "carpet"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d7"
+      },
+      "name": "Thanh Khê Pickleball Grounds",
+      "description": "Well-maintained courts in Đà Nẵng.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "159 Nguyễn Văn Linh, Thanh Khê",
+          "province": "Đà Nẵng",
+          "district": "Thanh Khê"
+      },
+      "geolocation": {
+          "latitude": 16.067871,
+          "longitude": 108.220623
+      },
+      "numberOfCourts": 3,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/pickleball-court-royalty-free-image-1700601969.jpg",
+              "alt": "Thanh Khê Pickleball Grounds"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/IMG_1573-scaled.jpg?v=1719414146",
+              "alt": "Thanh Khê Pickleball Grounds"
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": true,
+          "lighted": false,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": false,
+          "restroom": true,
+          "trainer": true,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": true,
+          "wifi": false,
+          "spectator_areas": true,
+          "break_areas": true
+      },
+      "surface": "wood"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d8"
+      },
+      "name": "Hạ Long Pickleball Club",
+      "description": "Scenic pickleball courts in Hạ Long.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "123 Hùng Thắng, Hạ Long",
+          "province": "Quảng Ninh",
+          "district": "Hạ Long"
+      },
+      "geolocation": {
+          "latitude": 20.949319,
+          "longitude": 107.080601
+      },
+      "numberOfCourts": 4,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Pickleball_Court_Cost.webp?v=1719414145",
+              "alt": "Hạ Long Pickleball Club Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/FotoJet-2024-06-07T160226.872.jpg?v=1719414146",
+              "alt": "Hạ Long Pickleball Club Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/SportMaster-ColorPlus-Paint-Pickleball-Courts-MAIN-1536x1152.jpg?v=17194141456",
+              "alt": "Hạ Long Pickleball Club Court"
+          }
+      ],
+      "feature": {
+          "indoor": true,
+          "outdoor": false,
+          "lighted": false,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": true,
+          "trainer": false,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": true,
+          "equipment_free": false,
+          "wifi": false,
+          "spectator_areas": false,
+          "break_areas": true
+      },
+      "surface": "acrylic"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9d9"
+      },
+      "name": "Ngô Quyền Pickleball Courts",
+      "description": "Popular pickleball courts in Hải Phòng.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "456 Lê Lợi, Ngô Quyền",
+          "province": "Hải Phòng",
+          "district": "Ngô Quyền"
+      },
+      "geolocation": {
+          "latitude": 20.844561,
+          "longitude": 106.688478
+      },
+      "numberOfCourts": 2,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/pickleball-22x56-1.jpg?v=1719414145",
+              "alt": "Ngô Quyền Pickleball Courts"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/PXL_20220518_123625984.jpg?v=1719414145",
+              "alt": "Ngô Quyền Pickleball Courts"
+          }
+      ],
+      "feature": {
+          "indoor": true,
+          "outdoor": true,
+          "lighted": true,
+          "covered": true
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": true,
+          "locker_room": false,
+          "restroom": true,
+          "trainer": false,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": false,
+          "wifi": true,
+          "spectator_areas": false,
+          "break_areas": false
+      },
+      "surface": "wood"
+  },
+  {
+      "_id": {
+          "$oid": "66770348275ce2a3185df9da"
+      },
+      "name": "Hồ Chí Minh Sports Complex",
+      "description": "Extensive sports complex with pickleball courts.",
+      "owner": {
+          "id": {
+              "$oid": "66892c7e71aef88aae3e9781"
+          },
+          "name": "Quân Vũ",
+          "facebook": "https://www.facebook.com/vu9huy/",
+          "phone": "0352222222"
+      },
+      "location": {
+          "address": "789 Nguyễn Thị Minh Khai, Quận 3",
+          "province": "Hồ Chí Minh",
+          "district": "Quận 3"
+      },
+      "geolocation": {
+          "latitude": 10.776889,
+          "longitude": 106.688085
+      },
+      "numberOfCourts": 6,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/img-0953_1_orig-768x1024.jpg?v=1719414145",
+              "alt": "Hồ Chí Minh Sports Complex Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/Pickleball-1-1024x576.jpg?v=1719414145",
+              "alt": "Hồ Chí Minh Sports Complex Court"
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/pickleball-22x56-1.jpg?v=1719414145",
+              "alt": "Hồ Chí Minh Sports Complex Court"
+          }
+      ],
+      "feature": {
+          "indoor": false,
+          "outdoor": true,
+          "lighted": true,
+          "covered": false
+      },
+      "utilities": [
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô"
+          },
+          {
+              "name": "Wifi",
+              "description": "Wifi miễn phí"
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000
+              }
+          ]
+      },
+      "isDeleted": false,
+      "isPaid": true,
+      "views": 0,
+      "amenities": {
+          "bar_canteen": false,
+          "locker_room": true,
+          "restroom": true,
+          "trainer": true,
+          "parking_spaces": false,
+          "equipment_store": false,
+          "equipment_rental": true,
+          "equipment_free": false,
+          "wifi": true,
+          "spectator_areas": false,
+          "break_areas": true
+      },
+      "surface": "acrylic"
+  },
+  {
+      "_id": {
+          "$oid": "66a896b7241a43bcbaf19c73"
+      },
+      "name": "Hà Nội Pickleball Center 1111",
+      "description": "A modern pickleball center located in the heart of Hà Nội.",
+      "owner": {
+          "id": {
+              "$oid": "6686533f09d688ee2dcfaed5"
+          },
+          "name": "quanvu2704"
+      },
+      "location": {
+          "address": "123 Hoàn Kiếm, Hoàn Kiếm District",
+          "province": "Hà Nội",
+          "district": "Hoàn Kiếm"
+      },
+      "geolocation": {
+          "latitude": 21.028511,
+          "longitude": 105.848217
+      },
+      "numberOfCourts": 4,
+      "images": [
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2024-06-16.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66a9908554ab80129ab8b1a8"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2023-06-03.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66a9908554ab80129ab8b1a9"
+              }
+          },
+          {
+              "url": "https://cdn.shopify.com/s/files/1/0697/0110/8031/files/2021-08-17.jpg?v=1719413888",
+              "alt": "Sân pickleball",
+              "_id": {
+                  "$oid": "66a9908554ab80129ab8b1aa"
+              }
+          }
+      ],
+      "feature": {
+          "indoor": true,
+          "outdoor": true,
+          "lighted": true,
+          "covered": true
+      },
+      "utilities": [
+          {
+              "name": "Quầy bar",
+              "description": "Quầy bar với đầy đủ các loại đồ uống",
+              "_id": {
+                  "$oid": "66a8964f241a43bcbaf19c38"
+              }
+          },
+          {
+              "name": "Sân đỗ xe",
+              "description": "Sân đỗ xe ô tô",
+              "_id": {
+                  "$oid": "66a8964f241a43bcbaf19c39"
+              }
+          }
+      ],
+      "availability": [
+          {
+              "label": "Thứ 2 - thứ 6",
+              "days": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+              ],
+              "openTime": {
+                  "hours": 8,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 23,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66a8964f241a43bcbaf19c3a"
+              }
+          },
+          {
+              "label": "Thứ 7 - chủ nhật",
+              "days": [
+                  6,
+                  0
+              ],
+              "openTime": {
+                  "hours": 5,
+                  "minutes": 0
+              },
+              "closeTime": {
+                  "hours": 24,
+                  "minutes": 0
+              },
+              "_id": {
+                  "$oid": "66a8964f241a43bcbaf19c3b"
+              }
+          }
+      ],
+      "bookingInfo": {
+          "priceRange": {
+              "min": 100000,
+              "max": 200000
+          },
+          "detail": [
+              {
+                  "label": "Cuối tuần",
+                  "value": 250000,
+                  "_id": {
+                      "$oid": "66a8964f241a43bcbaf19c3c"
+                  }
+              }
+          ]
+      },
+      "isPaid": true,
+      "isDeleted": false,
+      "views": 0,
+      "createdAt": {
+          "$date": "2024-07-30T07:31:03.274Z"
+      },
+      "updatedAt": {
+          "$date": "2024-07-31T01:16:53.968Z"
+      },
+      "__v": 1,
+      "amenities": {
+          "bar_canteen": true,
+          "locker_room": true,
+          "restroom": false,
+          "trainer": false,
+          "parking_spaces": true,
+          "equipment_store": true,
+          "equipment_rental": false,
+          "equipment_free": true,
+          "wifi": true,
+          "spectator_areas": false,
+          "break_areas": false
+      },
+      "surface": "concrete"
+  }
+]

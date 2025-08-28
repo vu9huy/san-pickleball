@@ -1,0 +1,110 @@
+.weather-card-container-front,
+.weather-card-container-back {
+    min-width: 200px;
+    height: 280px;
+    color: #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+.weather-card-container-front .weather-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-container-front .weather-card-province {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.weather-card-container-front .weather-card-date {}
+
+.weather-card-container-front .weather-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-container-front .weather-card-image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.weather-card-container-front .weather-card-image img {}
+
+.weather-card-container-front .weather-card-condition {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.weather-card-container-front .weather-card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.weather-card-container-front .weather-card-footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-container-front .weather-card-uv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+
+.weather-card-container-front .weather-card-uv span {
+    padding-bottom: 2px;
+}
+
+.weather-card-container-front .weather-card-footer-center {}
+
+.weather-card-container-front .weather-card-footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-container-front .weather-card-min-temp {}
+
+
+.weather-card-container-back .weather-card-header {}
+
+.weather-card-container-back .weather-card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weather-card-container-back .weather-card-body-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-card-container-back .weather-card-body-item span:first-child {
+    text-align: left;
+}

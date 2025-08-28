@@ -1,0 +1,221 @@
+/* Main carousel container */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.carousel *{
+  box-sizing: border-box;
+}
+
+/* Embla viewport */
+.viewport {
+  overflow: visible;
+  border-radius: 12px;
+}
+
+/* Embla container */
+.container {
+  display: flex;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: auto;
+}
+
+.slide:last-child .slideInner{
+  padding-right: 0px;
+}
+
+.slideInner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding-right: 20px;
+}
+
+.slideImg {
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 20px;
+  
+  /* Mobile: 400px height, full width */
+  height: 400px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .viewport {
+    padding: 0 20px;
+  }
+  .slide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .slideInner {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 20px;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 769px) {
+  .slideImg {
+    height: 500px;
+    width: auto;
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .slideImg {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1224px) {
+  .slideImg {
+    height: 700px;
+  }
+}
+
+/* Navigation buttons */
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.buttonPrev {
+  left: 0;
+  transform: translateX(50%);
+}
+
+.buttonPrev:hover{
+  transform: translateX(50%) scale(1.05);
+}
+
+.buttonNext {
+  right: 0;
+  transform: translateX(-50%);
+}
+
+.buttonNext:hover{
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #333;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dot indicators */
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.dot:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.dotSelected {
+  background: var(--heavy-primary-color);
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  .button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .buttonIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Focus styles for accessibility */
+.button:focus,
+.dot:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Faster transitions */
+.viewport,
+.container {
+  transition: transform 0.15s ease-out; /* Faster than default 0.3s */
+}
+
+/* Loading state */
+.slideImg {
+  background: #f0f0f0;
+}

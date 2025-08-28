@@ -1,0 +1,47 @@
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.court-info-window-available-time {}
+
+.court-info-window-available-time-detail {
+    /* color: var(--primary-color); */
+    color: red;
+    /* font-weight: 600; */
+    font-size: 16px;
+}
+
+.court-detail-body-info-block-content {
+    margin-left: 24px;
+}
+
+.court-detail-body-info-block-content li {
+    margin-bottom: 10px;
+}
+
+.court-detail-body-info-block-content li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    color: #0000EE;
+}
+
+.court-detail-body-info-block-content .phone-link a {
+    color: #0000EE;
+}
+
+.court-social-phone-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    padding: 2px;
+    background-color: #3174ff;
+}

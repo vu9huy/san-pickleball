@@ -1,0 +1,33 @@
+name: Auto Deploy on Push to Master
+
+# Trigger the workflow on push to the master branch
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Node.js version
+        run: node -v
+
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: 34.16.88.192
+          username: vu9huy_workspace_2
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Load nvm / yarn / pm2 paths
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            cd pickleball/pickleball-server/
+            git pull
+            ./start.sh

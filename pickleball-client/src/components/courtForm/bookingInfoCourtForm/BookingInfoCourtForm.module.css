@@ -1,0 +1,76 @@
+.booking-info-court-form-container {
+    margin-top: 8px;
+}
+
+.booking-info-court-form-price-range {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.booking-info-court-form-price-range-field {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.booking-info-court-form-price-range label span {
+    margin-bottom: 2px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.court-form-label {
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.booking-info-court-form-price-range label input {
+    width: 100%;
+}
+
+.booking-info-court-form-detail {
+    margin-top: 20px;
+}
+
+.booking-info-court-form-detail-title {
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.booking-info-court-form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.booking-info-court-form-detail-price {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.booking-info-court-form-field-input-wrapper {}
+
+.booking-info-court-form-field-description {}
+
+.booking-info-court-form-field-description input {}
+
+.booking-info-court-form-field-input-wrapper label {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-info-court-form-field-input-wrapper label span {
+    padding-bottom: 2px;
+}
+
+.booking-info-court-form-add-button {
+    margin-top: 12px;
+}

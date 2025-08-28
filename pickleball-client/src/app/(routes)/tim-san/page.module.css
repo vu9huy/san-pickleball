@@ -1,0 +1,111 @@
+.tim-san-container {}
+
+.tim-san-container h1 {
+    margin: 28px 0;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 0;
+}
+
+.map-note-message {
+    font-weight: 600;
+}
+
+.court-filter-wrapper {
+    margin-bottom: 20px;
+}
+
+.court-filter-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.courts-filter-button {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.5px;
+    cursor: pointer;
+}
+
+.active .courts-filter-button {
+    color: var(--primary-color);
+}
+
+.courts-filter-number-container {
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.active .courts-filter-number-container {
+    opacity: 0;
+}
+
+.court-filter-body {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.6s;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0;
+}
+
+.court-filter-body div {
+    /* max-height: 100%; */
+}
+
+.active .court-filter-body {
+    height: 400px;
+    border: 1px solid var(--primary-color);
+    padding: 40px 32px 20px;
+
+    overflow-y: auto;
+}
+
+.court-filter-body-close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.court-filter-body-close button {
+    font-size: 36px;
+    font-weight: 200;
+    line-height: 1;
+    padding: 2px 8px;
+    min-width: 0;
+}
+
+.courts-number-container {
+    display: none;
+    margin-top: 12px;
+}
+
+.active .courts-number-container {
+    display: block;
+}
+
+.courts-number {
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.courts-list {
+    /* height: 2000px; */
+}

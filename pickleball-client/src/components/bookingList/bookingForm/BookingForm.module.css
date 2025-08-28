@@ -1,0 +1,84 @@
+.booking-form-container {
+    padding: 20px;
+}
+
+.booking-form-container h4 {
+    margin-bottom: 12px;
+}
+
+.booking-form-field {
+    margin: 32px 0;
+}
+
+.booking-form-field p,
+.booking-form-field label {
+    font-weight: 600;
+    min-width: 80px;
+}
+
+
+.booking-form-field-disable label {
+    align-items: flex-start;
+}
+
+.booking-form-field-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.booking-form-field-style>div {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.booking-form-field-time {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.booking-form-time-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.booking-form-time-detail>div {
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+
+.booking-form-time-detail>span {
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.booking-form-field-note {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form-field-note textarea {
+    resize: none;
+}
+
+.booking-form-field-court-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.booking-form-field-court-select>div {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+span.booking-form-disable-date-selected {
+    /* text-transform: lowercase; */
+    margin-left: 0;
+}

@@ -1,0 +1,21 @@
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.court-info-window-available-time {}
+
+.court-info-window-available-time-detail {
+    /* color: var(--primary-color); */
+    color: red;
+    /* font-weight: 600; */
+    font-size: 16px;
+}
+
+.court-detail-body-info-block-content {
+    margin-left: 24px;
+}

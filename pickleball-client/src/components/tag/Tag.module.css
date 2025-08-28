@@ -1,0 +1,30 @@
+.tag {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #0077b6;
+    font-size: 0.75em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    margin-right: 4px;
+}
+
+.tag.blog {
+    background-color: #ffe491;
+    color: #a8820c;
+}
+
+.tag.guide {
+    background-color: #e0f7fa;
+    color: #0077b6;
+}
+
+.tag.blog:hover {
+    background-color: #ffd863;
+    color: #926e05;
+}
+
+.tag.guide:hover {
+    background-color: #a6eef9;
+    color: #025a89;
+}

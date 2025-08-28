@@ -1,0 +1,329 @@
+/* LocationDisplay Container */
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--light-primary-color, #86efac);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.methodBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background-color: var(--primary-color, #22c55e);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.methodIcon {
+    font-size: 16px;
+}
+
+.methodText {
+    font-size: 14px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 16px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Display Name */
+.displayName {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--heavy-primary-color, #16a34a);
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+/* Selected Info */
+.selectedInfo {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.selectedItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.selectedItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.selectedItem:first-child {
+    padding-top: 0;
+}
+
+.selectedLabel {
+    font-size: 14px;
+    color: var(--text-dark, #1f2937);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-right: 12px;
+    min-width: 100px;
+}
+
+.selectedValue {
+    font-size: 14px;
+    color: var(--heavy-primary-color, #16a34a);
+    font-weight: 600;
+    text-align: right;
+    flex: 1;
+}
+
+/* Address Details */
+.addressDetails {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.addressItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.addressItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.addressItem:first-child {
+    padding-top: 0;
+}
+
+.addressLabel {
+    font-size: 14px;
+    color: var(--text-dark, #1f2937);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-right: 12px;
+    min-width: 120px;
+}
+
+.addressValue {
+    font-size: 14px;
+    color: var(--text-dark, #1f2937);
+    text-align: right;
+    flex: 1;
+}
+
+/* Coordinates */
+.coordinates {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.coordinateItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.coordinateLabel {
+    font-size: 12px;
+    color: var(--text-light-1, #6b7280);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.coordinateValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark, #1f2937);
+    font-family: 'Courier New', monospace;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Accuracy Note */
+.accuracyNote {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.accuracyIcon {
+    font-size: 16px;
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.accuracyText {
+    font-size: 13px;
+    color: #1e40af;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .selectedItem,
+    .addressItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .selectedLabel,
+    .addressLabel {
+        min-width: unset;
+        margin-right: 0;
+        font-size: 13px;
+    }
+
+    .selectedValue,
+    .addressValue {
+        text-align: left;
+        font-size: 13px;
+    }
+
+    .coordinates {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .coordinateItem {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .coordinateLabel {
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+
+    .coordinateValue {
+        font-size: 13px;
+    }
+
+    .methodBadge {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .sectionTitle {
+        font-size: 15px;
+    }
+
+    .displayName {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .accuracyNote {
+        padding: 8px 10px;
+        margin-top: 12px;
+    }
+
+    .accuracyText {
+        font-size: 12px;
+    }
+}
+
+/* Animation */
+.container {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        border-color: var(--primary-color, #22c55e);
+    }
+
+    .displayName,
+    .selectedInfo,
+    .addressDetails,
+    .coordinates {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .coordinateValue {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-color: rgba(34, 197, 94, 0.3);
+        color: #e5e7eb;
+    }
+
+    .accuracyNote {
+        background-color: rgba(59, 130, 246, 0.15);
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .accuracyText {
+        color: #93c5fd;
+    }
+}

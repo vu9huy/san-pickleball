@@ -1,0 +1,26 @@
+.geoloaction-court-form-container {}
+
+.geoloaction-court-form-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.geoloaction-court-form-link {
+    padding: 4px 0 8px;
+}
+
+.geoloaction-court-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 45%;
+}
+
+@media screen and (max-width: 768px) {
+    .geoloaction-court-form-field {
+        width: 100%;
+    }
+}

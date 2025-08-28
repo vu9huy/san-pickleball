@@ -1,0 +1,25 @@
+.guide-list-container {}
+
+.guide-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .guide-list-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .guide-list-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .guide-list-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

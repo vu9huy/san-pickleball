@@ -1,0 +1,103 @@
+/* src/Modal.css */
+
+
+.modal-total-overlay {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay.show {
+    display: block;
+}
+
+
+.modal-total-container {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overscroll-behavior: contain;
+    display: none;
+    margin: auto;
+
+    background: #fff;
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    width: 90%;
+    max-width: 800px;
+    max-height: 90%;
+
+    flex-direction: column;
+}
+
+.modal-total-container.show {
+    display: flex;
+}
+
+.modal-total-header {
+    padding: 20px;
+    border-bottom: 1px solid #a6a6a6;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-total-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    line-height: 1;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: #000000;
+    border-radius: 4px;
+}
+
+.modal-total-close:hover {
+    background-color: #dadada;
+}
+
+.modal-total-body {
+    min-height: 50vh;
+    max-height: 70vh;
+    height: fit-content;
+    max-width: 1024px;
+    width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.modal-total-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 10px 40px;
+    border-top: 1px solid #a6a6a6;
+}
+
+/* .modal-total-secondary-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #929292;
+}
+
+.modal-total-secondary-button:hover {
+    background-color: #ebebeb;
+} */

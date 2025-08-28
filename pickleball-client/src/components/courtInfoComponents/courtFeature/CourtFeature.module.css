@@ -1,0 +1,45 @@
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.court-detail-body-info-block-content {
+    margin-left: 24px;
+}
+
+.court-detail-body-info-block-content {
+    pointer-events: none;
+}
+
+.court-icon-wrap {
+    width: fit-content;
+    width: 28px;
+    margin-left: -2px;
+}
+
+.court-icon-wrap svg {
+    transform: rotate(90deg);
+    width: 100%;
+}
+
+.checkbox-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* @media screen and (max-width: 768px) {
+    .checkbox-wrapper {
+        grid-template-columns: 1fr;
+    }
+} */
+
+@media screen and (max-width: 480px) {
+    .checkbox-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

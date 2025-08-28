@@ -1,0 +1,29 @@
+.feature-court-form-container {}
+
+.feature-court-form-option-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.feature-court-form-option-wrapper label {
+    /* display: inline-block; */
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.feature-court-form-option-wrapper input {
+    accent-color: var(--primary-color);
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+}
+
+.feature-court-form-option-wrapper label span {
+    padding-left: 6px;
+    line-height: 1;
+}

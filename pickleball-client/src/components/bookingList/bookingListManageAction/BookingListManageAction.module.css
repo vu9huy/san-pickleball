@@ -1,0 +1,13 @@
+.booking-list-manage-action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+}
+
+
+.booking-list-manage-action button {
+    font-weight: 600;
+}

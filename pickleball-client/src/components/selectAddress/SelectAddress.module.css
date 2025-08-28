@@ -1,0 +1,32 @@
+.select-address-container {
+    font-family: unknow-font, sans-serif;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0px;
+    gap: 20px;
+}
+
+.select-address-provinces,
+.select-address-district {
+    width: 50%;
+}
+
+.select-address-label {
+    padding-bottom: 8px;
+}
+
+.select-address-note {
+    color: red;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .select-address-container {
+        flex-direction: column;
+    }
+
+    .select-address-provinces,
+    .select-address-district {
+        width: 100%;
+    }
+}

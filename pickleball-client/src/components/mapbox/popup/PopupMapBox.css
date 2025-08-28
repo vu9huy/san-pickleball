@@ -1,0 +1,22 @@
+.mapboxgl-popup-content {}
+
+.map-box-infowindow-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    color: #858585;
+    padding: 1px 6px;
+}
+
+.map-box-infowindow-close-button p {
+    transform: rotate(45deg);
+}
+
+.map-box-infowindow-close-button:hover {
+    background-color: #e1e1e1;
+}

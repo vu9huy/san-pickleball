@@ -1,0 +1,19 @@
+.booking-list-filter {
+    margin: 12px 0;
+}
+
+.booking-list-filter-court-number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.court-number-select-wrapper {
+    width: 150px;
+}
+
+.court-number-select-wrapper>div {
+    margin-bottom: 0;
+}

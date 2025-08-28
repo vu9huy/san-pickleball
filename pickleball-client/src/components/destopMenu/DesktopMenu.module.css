@@ -1,0 +1,12 @@
+.desktop-menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .desktop-menu-container {
+        display: none;
+    }
+}

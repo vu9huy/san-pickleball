@@ -1,0 +1,195 @@
+.mobile-link-list-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--dark-bg);
+    padding: 16px 8px 8px 28px;
+    font-family: var(--font-barlow-condensed);
+    color: var(--text-light-2);
+
+    min-width: 300px;
+}
+
+.mobile-link-list-close-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.mobile-link-list-close-button {
+    display: flex;
+    background-color: #ffffff;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.mobile-link-list-close-button-icon {
+    stroke: #000000;
+    width: 32px;
+    height: 32px;
+}
+
+.mobile-link-list-wrapper {
+    padding-top: 30px;
+}
+
+.mobile-link-item {
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(0px);
+}
+
+.mobile-link-item>a span {
+    text-transform: uppercase;
+    position: relative;
+}
+
+.mobile-link-item>a span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    bottom: -2px;
+    height: 2px;
+    transform: none;
+    width: 0;
+    background-color: #ffffff;
+}
+
+.mobile-link-item.link-active>a span:after {
+    width: 100%;
+}
+
+.mobile-link-item:hover>a span:after {
+    /* width: 100%; */
+}
+
+.mobile-link-item a {
+    width: 100%;
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.mobile-link-item>span {
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.mobile-link-item:hover {
+    color: #ffffff;
+    /* transform: translateX(4px); */
+}
+
+.mobile-link-item.link-active {
+    color: #ffffff;
+    transform: translateX(8px);
+}
+
+.mobile-link-children-list {
+    padding-left: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    color: var(--text-light-2);
+}
+
+.mobile-link-children-list.open {
+    max-height: 80px;
+}
+
+.mobile-link-children-item span {
+    position: relative;
+}
+
+.mobile-link-children-item:hover span {
+    font-size: 21px;
+}
+
+.mobile-link-children-item span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    bottom: -4px;
+    height: 2px;
+    transform: none;
+    width: 0;
+    background-color: #ffffff;
+}
+
+.mobile-link-children-item:hover {
+    color: #ffffff;
+}
+
+.mobile-link-children-item.link-active {
+    color: #ffffff;
+}
+
+.mobile-link-children-item.link-active span:after {
+    width: 100%;
+}
+
+.mobile-link-item-label {
+    position: relative;
+}
+
+.mobile-link-item-label-icon {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+}
+
+.chevron-up-icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--text-light-2);
+}
+
+.mobile-link-item-label:hover .chevron-up-icon {
+    fill: #ffffff;
+}
+
+.link-active .chevron-up-icon {
+    fill: #ffffff;
+}
+
+.mobile-link-item-label-icon.rotate-icon-1 {
+    animation: rotateUpwards 0.3s forwards;
+}
+
+.mobile-link-item-label-icon.rotate-icon-2 {
+    animation: rotateDownwards 0.3s forwards;
+}
+
+@keyframes rotateDownwards {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateUpwards {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+}

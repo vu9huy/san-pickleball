@@ -1,0 +1,30 @@
+.facebook-share-button-container {
+    margin-bottom: 24px;
+    margin-left: 20px;
+}
+
+.fb-share-button a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #1877F2;
+    color: #ffff;
+    width: fit-content;
+}
+
+.facebook-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-right: 1px solid #ffffff;
+}
+
+.facebook-share-text {
+    display: inline-block;
+    line-height: 1;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 600;
+}

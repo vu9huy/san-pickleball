@@ -1,0 +1,151 @@
+.courts-filter-container {}
+
+.courts-filter-wrapper-item {
+    display: flex;
+    flex-direction: row;
+    gap: 12px 40px;
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+.courts-filter-wrapper-item label {
+    /* margin-left: 12px; */
+    padding-bottom: 0;
+    min-width: 70px;
+}
+
+.courts-filter-item {
+    /* margin-bottom: 20px; */
+
+}
+
+.courts-filter-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.courts-filter-item-input {
+    padding: 8px 10px;
+    width: 100%;
+}
+
+.courts-filter-select {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.courts-filter-select select {
+    width: 100%;
+}
+
+.courts-filter-checkbox {
+    border: 0;
+}
+
+.courts-filter-checkbox legend {
+    margin-bottom: 12px;
+}
+
+.courts-filter-checkbox label {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 4px;
+}
+
+.courts-filter-checkbox input {
+    margin-right: 8px;
+}
+
+.courts-filter-item-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.courts-filter-item-checkbox.checkbox-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+}
+
+.courts-filter-item-checkbox input {
+    accent-color: var(--primary-color);
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+}
+
+.courts-filter-item-checkbox span {
+    line-height: 1;
+}
+
+.courts-filter-select select {
+    min-width: 200px;
+    height: 35px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.courts-filter-select select option {
+    color: #333;
+    /* Text color */
+    background-color: #f9f9f9;
+    /* Background color */
+    padding: 10px;
+    /* Padding inside the option */
+}
+
+.courts-filter-select select.decorated option:hover {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+.courts-filter-select select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    /* Change border color on focus */
+}
+
+.courts-filter-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.courts-filter-booking {}
+
+.courts-filter-booking-value-label {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .courts-filter-input {
+        width: 100%;
+    }
+
+    .courts-filter-select {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .courts-filter-item-checkbox.checkbox-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

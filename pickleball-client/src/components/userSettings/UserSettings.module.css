@@ -1,0 +1,108 @@
+.user-setting-container {}
+
+
+.user-setting-list {
+    width: 180px;
+    background-color: var(--primary-color);
+    background-color: #93D742;
+    padding: 14px 10px;
+}
+
+.user-setting-item {
+    color: #ffffff;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.user-setting-item:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+.user-setting-item:hover .user-setting-item-label {
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(10px);
+}
+
+.user-setting-item a {
+    display: inline-block;
+    width: 100%;
+}
+
+.user-setting-item-label {
+    display: inline-block;
+    padding: 14px 4px;
+}
+
+.user-setting-mobile-container {}
+
+.user-setting-mobile-list {}
+
+.user-setting-mobile-container .mobile-link-item {
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(0px);
+}
+
+.mobile-link-item {
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    --webkit-transition: transform 0.3s ease;
+    transform: translateX(0px);
+}
+
+.mobile-link-item>a span {
+    text-transform: uppercase;
+    position: relative;
+}
+
+.mobile-link-item>a span:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+    bottom: -2px;
+    height: 2px;
+    transform: none;
+    width: 0;
+    background-color: #ffffff;
+}
+
+.mobile-link-item.link-active>a span:after {
+    width: 100%;
+}
+
+.mobile-link-item:hover>a span:after {
+    /* width: 100%; */
+}
+
+.mobile-link-item a {
+    width: 100%;
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.mobile-link-item>span {
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.mobile-link-item:hover {
+    color: #ffffff;
+    /* transform: translateX(4px); */
+}
+
+.mobile-link-item.link-active {
+    color: #ffffff;
+    transform: translateX(8px);
+}

@@ -1,0 +1,77 @@
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.court-detail-body-info-block-fake-icon {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 4px;
+    color: var(--primary-color)
+}
+
+.court-detail-body-info-block-content {
+    margin-left: 24px;
+}
+
+.court-price-images-wrapper {
+    margin-left: 24px;
+}
+
+.court-price-images-wrapper p {
+    margin-bottom: 10px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.court-price-detail-link {
+    margin-top: 8px;
+}
+
+.view-detail-text {
+    color: var(--primary-color, #007bff);
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.view-detail-text:hover {
+    color: var(--secondary-color, #0056b3);
+    text-decoration: none;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.court-price-image {
+    /* max-height: 400px; */
+    max-width: 100%;
+    /* aspect-ratio: 2/1; */
+    height: auto;
+    width: auto;
+    position: relative;
+    /* cursor: pointer; */
+}
+
+.court-price-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    /* .court-price-images-wrapper {
+        display: none;
+    } */
+}

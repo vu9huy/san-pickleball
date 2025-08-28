@@ -1,0 +1,274 @@
+/* AddressSelector Container */
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--light-primary-color, #86efac);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--heavy-primary-color, #16a34a);
+    margin: 0 0 16px 0;
+}
+
+/* Select Container */
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+.selectItem {
+    width: 100%;
+}
+
+.selectLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark, #1f2937);
+    font-size: 14px;
+}
+
+.selectLabelValue {
+    font-weight: 600;
+    margin-left: 8px;
+    color: var(--heavy-primary-color, #16a34a);
+}
+
+/* Detail Address Input */
+.detailAddressContainer {
+    width: 100%;
+}
+
+.detailAddressInput {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid var(--light-primary-color, #86efac);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    color: var(--text-dark, #1f2937);
+}
+
+.detailAddressInput:focus {
+    outline: none;
+    border-color: var(--primary-color, #22c55e);
+    box-shadow: 0 0 0 1px var(--primary-color, #22c55e);
+}
+
+.detailAddressInput::placeholder {
+    color: var(--text-light-1, #6b7280);
+}
+
+/* Get Address Button */
+.getAddressButtonContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4px;
+}
+
+.getAddressButton {
+    padding: 12px 24px;
+    background-color: var(--primary-color, #22c55e);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.getAddressButton:hover:not(:disabled) {
+    background-color: var(--heavy-primary-color, #16a34a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.2);
+}
+
+.buttonDisabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none !important;
+    background-color: var(--disable-primary-color, #9ca3af) !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+/* Small Spinner */
+.smallSpinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Custom React Select Styles Override */
+.selectItem .react-select__control {
+    border: 1px solid var(--light-primary-color, #86efac) !important;
+    border-radius: 8px !important;
+    min-height: 42px !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.selectItem .react-select__control:hover {
+    border-color: var(--primary-color, #22c55e) !important;
+}
+
+.selectItem .react-select__control--is-focused {
+    border-color: var(--primary-color, #22c55e) !important;
+    box-shadow: 0 0 0 1px var(--primary-color, #22c55e) !important;
+}
+
+.selectItem .react-select__placeholder {
+    color: var(--text-light-1, #6b7280) !important;
+    font-size: 14px !important;
+}
+
+.selectItem .react-select__single-value {
+    color: var(--text-dark, #1f2937) !important;
+    font-size: 14px !important;
+}
+
+.selectItem .react-select__option {
+    font-size: 14px !important;
+}
+
+.selectItem .react-select__option--is-selected {
+    background-color: var(--primary-color, #22c55e) !important;
+    color: white !important;
+}
+
+.selectItem .react-select__option--is-focused {
+    background-color: var(--light-primary-color, #86efac) !important;
+    color: var(--text-dark, #1f2937) !important;
+}
+
+.selectItem .react-select__menu {
+    border: 1px solid var(--light-primary-color, #86efac) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.selectItem .react-select__control--is-disabled {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    opacity: 0.6 !important;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation for container */
+.container {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .selectContainer {
+        gap: 12px;
+    }
+    
+    .getAddressButton {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .selectLabel {
+        font-size: 13px;
+    }
+    
+    .detailAddressInput {
+        font-size: 13px;
+    }
+    
+    .getAddressButtonContainer {
+        margin-top: 8px;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #0f172a;
+        border-color: var(--primary-color, #22c55e);
+    }
+    
+    .detailAddressInput {
+        background-color: #1e293b;
+        border-color: var(--primary-color, #22c55e);
+        color: #e5e7eb;
+    }
+    
+    .detailAddressInput::placeholder {
+        color: #9ca3af;
+    }
+    
+    .selectItem .react-select__control {
+        background-color: #1e293b !important;
+        border-color: var(--primary-color, #22c55e) !important;
+    }
+    
+    .selectItem .react-select__single-value {
+        color: #e5e7eb !important;
+    }
+    
+    .selectItem .react-select__placeholder {
+        color: #9ca3af !important;
+    }
+    
+    .selectItem .react-select__menu {
+        background-color: #1e293b !important;
+        border-color: var(--primary-color, #22c55e) !important;
+    }
+    
+    .selectItem .react-select__option {
+        color: #e5e7eb !important;
+    }
+    
+    .selectItem .react-select__option--is-focused {
+        background-color: rgba(34, 197, 94, 0.2) !important;
+        color: #e5e7eb !important;
+    }
+}

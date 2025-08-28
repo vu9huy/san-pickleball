@@ -1,0 +1,77 @@
+.privary-policy-container {}
+
+.privary-policy-container h1 {
+    margin: 28px 0 16px 0;
+}
+
+.privary-policy-container li {
+    margin: 6px 0;
+}
+
+.privary-policy-container p,
+.privary-policy-container span {
+    margin: 4px 0;
+    line-height: 1.5;
+}
+
+.privary-policy-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Section Titles */
+.privary-policy-container h2 {
+    font-size: 1.75em;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Paragraph Styling */
+.privary-policy-container p {
+    margin: 15px 0;
+}
+
+/* Bold Styling */
+.privary-policy-container strong {
+    color: #000;
+}
+
+/* Unordered List Styling */
+.privary-policy-container ul {
+    margin: 10px 0 20px 20px;
+    padding-left: 10px;
+    list-style-type: disc;
+}
+
+.privary-policy-container li {
+    margin-bottom: 10px;
+}
+
+/* Email Link Styling */
+.privary-policy-container p a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privary-policy-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .privary-policy-container h1 {
+        font-size: 2em;
+    }
+
+    .privary-policy-container h2 {
+        font-size: 1.5em;
+    }
+
+    .privary-policy-container p,
+    .privary-policy-container li {
+        font-size: 1em;
+    }
+}

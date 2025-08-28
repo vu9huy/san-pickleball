@@ -1,0 +1,38 @@
+.register-form-container {}
+
+.register-form-field {
+    margin: 16px 0;
+}
+
+.register-form-password {
+    position: relative;
+}
+
+.register-form-input {
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.register-form-show-password {}
+
+.show-password-wrapper {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.register-form-submit {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.register-form-noti {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 0px;
+}
+
+.register-form-noti a {
+    color: blue;
+}

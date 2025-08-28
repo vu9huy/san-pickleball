@@ -1,0 +1,122 @@
+.weather-card-container {
+    width: 100%;
+    /* width: fit-content; */
+    color: #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 10px;
+}
+
+.weather-card-header,
+.weather-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.weather-card-body {}
+
+.weather-card-province {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+
+    /* max-width: 180px; */
+    /* white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word; */
+}
+
+.weather-card-body-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.weather-card-condition {
+    margin-bottom: 6px;
+}
+
+.weather-card-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-card-day-of-week {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.weather-card-date-date {}
+
+.weather-card-image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.weather-card-image img {}
+
+.weather-card-condition {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.weather-card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.weather-card-footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-uv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
+}
+
+.weather-card-uv-value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.weather-card-uv-value span {
+    padding-bottom: 2px;
+}
+
+.weather-card-footer-center {}
+
+.weather-card-footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-card-temp {
+    display: flex;
+    flex-direction: column;
+}

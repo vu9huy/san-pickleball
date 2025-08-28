@@ -1,0 +1,534 @@
+/* Main Container */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* No Location State */
+.noLocationContainer {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  border-radius: 12px;
+}
+
+.noLocationCard {
+  background: white;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  max-width: 500px;
+  margin: 20px;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.noLocationIcon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.noLocationTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.noLocationMessage {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.noLocationSubMessage {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mobile Controls - Above the map (default visible on mobile) */
+.mobileControls {
+  display: block;
+}
+
+/* Desktop Controls - Inside map (hidden by default) */
+.desktopControls {
+  display: none;
+}
+
+/* Toggle Button for Desktop */
+.toggleButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+  transform-origin: top left;
+  white-space: nowrap;
+  min-width: auto;
+  width: auto;
+  height: auto;
+}
+
+/* Hide toggle button when controls are visible */
+.toggleButton.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.toggleButton:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: scale(1.02);
+}
+
+.toggleButton:active {
+  transform: scale(0.98);
+}
+
+/* Map Controls - Shared styles */
+.mapControls {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform-origin: top left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.controlHeader {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.controlTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #f3f4f6;
+  color: #374151;
+  transform: scale(1.1);
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
+
+.controlRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.levelControls {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.levelSelectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.controlLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controlValue {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-left: 8px;
+}
+
+/* Range Slider Styles */
+.rangeSlider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  outline: none;
+  margin: 8px 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background 0.2s ease;
+}
+
+.rangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.rangeSlider::-webkit-slider-thumb:hover {
+  background: var(--heavy-primary-color);
+  transform: scale(1.1);
+}
+
+.rangeSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.rangeSlider::-moz-range-thumb:hover {
+  background: var(--heavy-primary-color);
+  transform: scale(1.1);
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.controlSelect {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 16px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.controlSelect:hover {
+  border-color: var(--light-primary-color);
+  transform: translateY(-1px);
+}
+
+.controlSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.userCount {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  min-width: 180px;
+  transition: all 0.2s ease;
+}
+
+.userCount:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.userCountNumber{
+  color: var(--primary-color);
+}
+
+.userCountText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  /* Hide mobile controls on desktop */
+  .mobileControls {
+    display: none;
+  }
+  
+  /* Show toggle button on desktop */
+  .toggleButton {
+    display: block;
+  }
+  
+  /* Show desktop controls inside map */
+  .desktopControls {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    max-width: 320px;
+    width: auto;
+  }
+  
+  /* Desktop controls hidden by default - start as button size */
+  .desktopControls .mapControls {
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Show desktop controls when visible - expand animation */
+  .desktopControls .mapControls.mapControlsVisible {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    width: 320px;
+    height: auto;
+    min-height: auto;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  /* Animate control rows when visible */
+  .desktopControls .mapControls.mapControlsVisible .controlRow {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
+  
+  .desktopControls .mapControls.mapControlsVisible .controlRow:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  
+  .desktopControls .mapControls.mapControlsVisible .controlRow:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  
+  .desktopControls .mapControls.mapControlsVisible .controlRow:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+  
+  /* Show control header on desktop */
+  .desktopControls .controlHeader {
+    display: flex;
+  }
+  
+  .desktopControls .mapControls.mapControlsVisible .controlHeader {
+    opacity: 1;
+  }
+  
+  /* Adjust container to remove gap on desktop */
+  .container {
+    gap: 0;
+  }
+  
+  /* Add subtle animations to interactive elements */
+  .desktopControls .rangeSlider {
+    transition: all 0.2s ease;
+  }
+  
+  .desktopControls .rangeSlider:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Tablet and Mobile Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    gap: 12px;
+  }
+  
+  .mapControls {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .controlRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .levelControls {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .controlLabel {
+    font-size: 16px;
+  }
+  
+  .controlSelect {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  
+  .rangeSlider {
+    margin: 4px 0;
+  }
+  
+  .rangeLabels {
+    font-size: 14px;
+  }
+  
+  .userCount {
+    min-width: auto;
+    padding: 10px 16px;
+  }
+  
+  .userCountText {
+    font-size: 16px;
+  }
+
+  .noLocationCard {
+    margin: 12px;
+    padding: 32px 24px;
+  }
+  
+  .noLocationIcon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .noLocationTitle {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .noLocationMessage {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .noLocationSubMessage {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapControls {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .controlLabel {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .controlValue {
+    margin-left: 0;
+  }
+  
+  .controlSelect {
+    font-size: 16px;
+    padding: 6px 10px;
+    width: 100%;
+  }
+  
+  .rangeLabels {
+    font-size: 14px;
+  }
+  
+  .userCount {
+    padding: 8px 12px;
+  }
+  
+  .userCountText {
+    font-size: 16px;
+  }
+}

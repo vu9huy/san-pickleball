@@ -1,0 +1,17 @@
+.court-detail-body-info-block-label {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.court-detail-body-info-block-content {
+    margin-left: 24px;
+    margin-bottom: 12px;
+}
+
+.court-detail-body-info-block-content li {
+    margin-bottom: 10px;
+}

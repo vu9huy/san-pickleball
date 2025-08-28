@@ -1,0 +1,14 @@
+.weather-list-container {
+    overflow-x: auto;
+    padding: 24px 10px 24px;
+    margin: 0 auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.weather-list-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    min-width: fit-content;
+}

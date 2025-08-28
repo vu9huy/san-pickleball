@@ -1,0 +1,111 @@
+.court {
+    /* margin: 16px auto; */
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.court-number {}
+
+.day-session {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    /* margin: 0 16px; */
+}
+
+.day-session>h4 {
+    padding-bottom: 4px;
+    min-width: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.day-session-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.slots {
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* padding-bottom: 4px; */
+    /* border: 1px solid #000000; */
+}
+
+.slot {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    position: relative;
+}
+
+/* .slot:last-child {
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+} */
+
+.slot:first-child {
+    border-left: 1px solid #dddddd;
+}
+
+.slot.booked {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.time {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.time p {
+    font-size: 15px;
+}
+
+.time span {
+    line-height: 8px;
+    margin-bottom: 4px;
+}
+
+.slot.time:last-child {
+    right: -20px;
+}
+
+.day-time-reference {
+    width: 1px;
+    height: 16px;
+    /* background-color: #dddddd; */
+    background-color: #858585;
+}
+
+@media screen and (max-width: 768px) {
+    .day-session {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

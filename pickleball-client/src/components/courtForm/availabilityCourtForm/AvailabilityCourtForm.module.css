@@ -1,0 +1,37 @@
+.availability-court-form-container {
+    margin-top: 8px;
+}
+
+.availability-court-form-field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.availability-court-form-field-days-select {
+    width: 100%;
+}
+
+.availability-court-form-time-select {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.availability-court-form-field-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.availability-court-form-field-input-wrapper>div {
+    margin-bottom: 0;
+}
+
+.availability-court-form-field-input-wrapper label {
+    padding-right: 6px;
+}

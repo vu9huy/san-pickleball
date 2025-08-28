@@ -1,0 +1,142 @@
+{
+    "0": {
+        "day": {
+            "description": "Nắng",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/clear-sky_f6pxyl.png"
+        },
+        "night": {
+            "description": "Quang đãng",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/clear-sky-night_m60vpw.png"
+        }
+    },
+    "1": {
+        "day": {
+            "description": "Nắng",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/clear-sky_f6pxyl.png"
+        },
+        "night": {
+            "description": "Quang đãng",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/clear-sky-night_m60vpw.png"
+        }
+    },
+    "2": {
+        "day": {
+            "description": "Có mây",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/partly-cloudy_tlrm6w.png"
+        },
+        "night": {
+            "description": "Có mây",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/partly-cloud-night_kgkllb.png"
+        }
+    },
+    "3": {
+        "day": {
+            "description": "Nhiều mây",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/overcast_lp8gn4.png"
+        },
+        "night": {
+            "description": "Nhiều mây",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093946/overcast-night_iumust.png"
+        }
+    },
+    "45": {
+        "day": {
+            "description": "Sương mù",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729131824/fog_eq9jhg.png"
+        },
+        "night": {
+            "description": "Sương mù",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729131824/fog_eq9jhg.png"
+        }
+    },
+    "48": {
+        "day": {
+            "description": "Sương mù dày đặc",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729131823/rime_fog_ppq3t8.png"
+        },
+        "night": {
+            "description": "Sương mù dày đặc",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729131823/rime_fog_ppq3t8.png"
+        }
+    },
+    "51": {
+        "day": {
+            "description": "Có thể có mưa",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        },
+        "night": {
+            "description": "Có thể có mưa",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        }
+    },
+    "53": {
+        "day": {
+            "description": "Mưa rải rác",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        },
+        "night": {
+            "description": "Mưa rải rác",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        }
+    },
+    "55": {
+        "day": {
+            "description": "Mưa to",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/rain_zblsci.png"
+        },
+        "night": {
+            "description": "Mưa to",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/rain_zblsci.png"
+        }
+    },
+    "80": {
+        "day": {
+            "description": "Có thể có mưa",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        },
+        "night": {
+            "description": "Có thể có mưa",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        }
+    },
+    "81": {
+        "day": {
+            "description": "Mưa rải rác",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        },
+        "night": {
+            "description": "Mưa rải rác",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/slight-rain_xkzei3.png"
+        }
+    },
+    "82": {
+        "day": {
+            "description": "Mưa to",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/rain_zblsci.png"
+        },
+        "night": {
+            "description": "Mưa to",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/rain_zblsci.png"
+        }
+    },
+    "95": {
+        "day": {
+            "description": "Mưa giông",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/thunderstorm_sr8t63.png"
+        },
+        "night": {
+            "description": "Mưa giông",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/thunderstorm_sr8t63.png"
+        }
+    },
+    "96": {
+        "day": {
+            "description": "Mưa giông",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/thunderstorm_sr8t63.png"
+        },
+        "night": {
+            "description": "Mưa giông",
+            "image": "https://res.cloudinary.com/du2azaqnn/image/upload/v1729093947/thunderstorm_sr8t63.png"
+        }
+    }
+}

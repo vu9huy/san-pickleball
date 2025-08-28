@@ -1,0 +1,145 @@
+.banner-carousel .carousel-slide {
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    /* border-radius: 16px; */
+}
+
+@media screen and (min-width: 1024px) {
+    .carousel-slide img {
+        height: 700px;
+    }
+}
+
+.carousel-content {
+    position: absolute;
+    /* left: 10%; */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-content.left {
+    left: 10%;
+}
+
+.carousel-content.right {
+    right: 10%;
+    align-items: flex-end;
+}
+
+.carousel-content button {
+    padding: 12px 24px;
+    height: auto;
+    width: fit-content;
+    min-width: 100px;
+}
+
+.carousel-content button a {
+    font-size: 20px;
+}
+
+/* Custom Arrow Styles */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent background */
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Positioning for Previous Arrow */
+.custom-arrow-prev {
+    left: 10px;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Positioning for Next Arrow */
+.custom-arrow-next {
+    right: 10px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.chevron-left-icon,
+.chevron-right-icon {
+    width: 40px;
+    height: 40px;
+    /* fill: rgba(0, 0, 0, 0.5); */
+    fill: var(--light-primary-color);
+}
+
+.custom-arrow:hover .chevron-left-icon,
+.custom-arrow:hover .chevron-right-icon {
+    /* fill: rgba(0, 0, 0, 1); */
+    fill: var(--primary-color);
+}
+
+
+/* Custom Indicator Styles */
+.custom-indicator {
+    width: 20px;
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    transition: width 0.3s ease;
+}
+
+.custom-indicator.selected {
+    background-color: var(--primary-color);
+    width: 40px;
+}
+
+.custom-indicator:hover {
+    background-color: var(--light-primary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-slide img {
+        height: 500px;
+    }
+
+    .carousel-content.left {
+        left: 15%;
+        /* top: 70%; */
+    }
+
+    .carousel-content.right {
+        right: 15%;
+        align-items: flex-end;
+    }
+
+    .carousel-content button a {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .carousel-content button a {
+        font-size: 16px;
+    }
+}

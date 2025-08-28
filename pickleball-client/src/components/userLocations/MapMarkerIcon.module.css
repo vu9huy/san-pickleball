@@ -1,0 +1,107 @@
+/* MapMarker.module.css */
+
+.mapMarker {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mapMarker:hover {
+  transform: scale(1.05);
+}
+
+.markerBody {
+  /* background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); */
+  background: var(--primary-color);
+  border-radius: 50% 50% 50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(68, 160, 141, 0.3);
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.avatarContainer {
+  transform: rotate(45deg);
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  color: #999;
+  border-radius: 50%;
+}
+
+.userIcon {
+  width: 60%;
+  height: 60%;
+}
+
+/* .markerPoint {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #44A08D;
+  margin-top: -2px;
+  filter: drop-shadow(0 2px 4px rgba(68, 160, 141, 0.3));
+} */
+
+
+.markerPoint {
+  border-left-width: 4px;
+  border-right-width: 4px;
+  border-top-width: 8px;
+}
+
+.markerBody {
+  width: 44px;
+  height: 44px;
+}
+
+.avatarContainer {
+  width: 38px;
+  height: 38px;
+}
+
+
+.mapMarker {
+  animation: markerAppear 0.3s ease-out;
+}
+
+@keyframes markerAppear {
+  from {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+}
