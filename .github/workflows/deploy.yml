@@ -24,11 +24,13 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest ./pickleball-client
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest
+          docker image prune -f
 
       - name: Build and push server image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest ./pickleball-server
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest
+          docker image prune -f
 
       # --- Copy configuration files to server ---
       - name: Copy docker-compose.yml to server
@@ -50,18 +52,18 @@ jobs:
             mkdir -p /home/${{ secrets.SSH_USER }}/san-pickleball/nginx
             mkdir -p /home/${{ secrets.SSH_USER }}/san-pickleball/scripts
 
-      - name: Upload Nginx config
-        uses: appleboy/scp-action@master
+      - name: Upload Nginx configs
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          source: "nginx/default.conf"
+          source: "nginx/"
           target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
           overwrite: true
 
       - name: Upload SSL renewal script
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -87,30 +89,68 @@ jobs:
             docker compose pull
             
             # Check if certificates already exist
-            if [ ! -d "/home/${{ secrets.SSH_USER }}/san-pickleball/certbot-etc/live/sanpickleball.xyz" ]; then
+            if [ ! -f "./certbot-etc/live/sanpickleball.xyz/fullchain.pem" ]; then
               echo "Setting up SSL certificates for the first time..."
               
-              # Start with HTTP-only nginx temporarily for certificate generation
-              docker compose up -d nginx client server mongo
-              sleep 10
+              # Step 1: Use HTTP-only nginx configuration for certificate generation
+              echo "Step 1: Using HTTP-only configuration for certificate generation..."
+              cp ./nginx/init.conf ./nginx/default.conf
               
-              # Generate SSL certificates
+              # Start services with HTTP-only config
+              docker compose up -d client server mongo nginx
+              
+              # Wait for services to be ready
+              echo "Waiting 20 seconds for services to start..."
+              sleep 20
+              
+              # Step 2: Generate SSL certificates
+              echo "Step 2: Generating SSL certificates..."
               docker compose run --rm certbot
               
               # Check if certificates were created successfully
-              if [ -d "/home/${{ secrets.SSH_USER }}/san-pickleball/certbot-etc/live/sanpickleball.xyz" ]; then
-                echo "SSL certificates generated successfully"
+              if [ -f "./certbot-etc/live/sanpickleball.xyz/fullchain.pem" ]; then
+                echo "✓ SSL certificates generated successfully!"
+                
+                # Step 3: Switch to SSL configuration
+                echo "Step 3: Switching to SSL-enabled configuration..."
+                cp ./nginx/ssl.conf ./nginx/default.conf
+                
+                # Restart nginx with SSL config
+                docker compose restart nginx
+                sleep 5
+                
+                echo "✓ SSL setup completed successfully!"
               else
-                echo "Failed to generate SSL certificates"
-                exit 1
+                echo "✗ Failed to generate SSL certificates."
+                echo "Please check:"
+                echo "1. Domain DNS points to this server"
+                echo "2. Ports 80 and 443 are open"
+                echo "3. No firewall blocking connections"
+                echo "Continuing with HTTP-only configuration..."
               fi
+            else
+              echo "SSL certificates already exist. Using SSL configuration..."
+              cp ./nginx/ssl.conf ./nginx/default.conf
             fi
             
-            # Start all services (nginx will now use SSL config)
+            # Start all services with final configuration
             docker compose up -d
             
-            # Setup certificate auto-renewal cron job
-            (crontab -l 2>/dev/null; echo "0 12 * * * /home/${{ secrets.SSH_USER }}/san-pickleball/scripts/ssl-renew.sh >> /var/log/le-renew.log 2>&1") | crontab -
+            # Setup certificate auto-renewal cron job (only if not exists)
+            if ! crontab -l 2>/dev/null | grep -q "ssl-renew.sh"; then
+              echo "Setting up SSL renewal cron job..."
+              (crontab -l 2>/dev/null; echo "0 12 * * * /home/${{ secrets.SSH_USER }}/san-pickleball/scripts/ssl-renew.sh >> /var/log/le-renew.log 2>&1") | crontab -
+            fi
             
             # Verify deployment
+            echo ""
+            echo "=== Deployment Status ==="
             docker compose ps
+            echo ""
+            echo "=== SSL Certificate Status ==="
+            if [ -f "./certbot-etc/live/sanpickleball.xyz/fullchain.pem" ]; then
+              echo "✓ SSL certificates are present"
+              docker compose run --rm certbot certificates
+            else
+              echo "✗ No SSL certificates found"
+            fi
