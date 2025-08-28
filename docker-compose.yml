@@ -1,14 +1,14 @@
 version: "3.8"
 services:
   client:
-    build: ./pickleball-client
+    image: gaaravu0/pickleball-client:latest
     container_name: nextjs-client
     restart: always
     ports:
       - "8080:8080"
 
   server:
-    build: ./pickleball-server
+    image: gaaravu0/pickleball-server:latest
     container_name: node-server
     restart: always
     ports:
