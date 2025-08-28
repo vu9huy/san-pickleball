@@ -71,3 +71,5 @@ jobs:
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
             docker compose pull
             docker compose up -d
+            docker compose run --rm certbot
+            docker compose exec nginx nginx -s reload

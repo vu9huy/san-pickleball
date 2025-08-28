@@ -34,9 +34,24 @@ services:
       - "443:443"   # public HTTPS (needed for SSL later)
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     depends_on:
       - client
       - server
+  
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: >
+      sh -c "certbot certonly --webroot
+      --webroot-path=/var/www/certbot
+      --email your@email.com
+      --agree-tos
+      --no-eff-email
+      -d sanpickleball.xyz -d www.sanpickleball.xyz"
 
 volumes:
   mongo-data:
