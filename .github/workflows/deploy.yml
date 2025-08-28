@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: "nginx/default.conf"
-          target: "/home/${{ secrets.SERVER_USER }}/san-pickleball/nginx/default.conf"
+          target: "/home/${{ secrets.SSH_USER }}/san-pickleball/nginx/default.conf"
 
       # --- Deploy on server ---
       - name: Deploy to Server
