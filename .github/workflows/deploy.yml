@@ -49,5 +49,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
+            git pull origin master
             docker compose pull
             docker compose up -d
