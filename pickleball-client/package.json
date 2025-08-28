@@ -14,8 +14,8 @@
     "gen-guides": "node ./src/utils/guides/generateGuideMetadata.js",
     "gen-breadcrumbs": "node ./src/utils/breadcrumbs/generateBreadcrumbsData.js",
     "postbuild": "next-sitemap",
-    "prebuild": "yarn gen-blogs && yarn gen-guides && yarn gen-breadcrumbs",
-    "predev": "yarn gen-blogs && yarn gen-guides && yarn gen-breadcrumbs"
+    "prebuild": "yarn gen-guides && yarn gen-breadcrumbs",
+    "predev": "yarn gen-guides && yarn gen-breadcrumbs"
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.5.3",
