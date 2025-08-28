@@ -39,10 +39,10 @@ next-env.d.ts
 public/sitemap.xml
 public/robots.txt
 
-/src/data/blogs/blogMetadata.json
-/src/data/guides/guideMetadata.json
-/src/data/breadcrumbs/breadcrumbsData.json
+#/src/data/blogs/blogMetadata.json
+#/src/data/guides/guideMetadata.json
+#/src/data/breadcrumbs/breadcrumbsData.json
 
-src/data/blogs/blogMetadata.json
-src/data/guides/guideMetadata.json
-src/data/breadcrumbs/breadcrumbsData.json
+#src/data/blogs/blogMetadata.json
+#src/data/guides/guideMetadata.json
+#src/data/breadcrumbs/breadcrumbsData.json
