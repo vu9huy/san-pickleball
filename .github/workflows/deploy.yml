@@ -82,7 +82,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             mkdir -p /home/${{ secrets.SSH_USER }}/san-pickleball/nginx
-            cp docker-compose.yml nginx/default.conf /home/${{ secrets.SSH_USER }}/san-pickleball/
+            cp docker-compose.yml /home/${{ secrets.SSH_USER }}/san-pickleball/
+            cp nginx/default.conf /home/${{ secrets.SSH_USER }}/san-pickleball/nginx/
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
             docker compose pull
             docker compose up -d
