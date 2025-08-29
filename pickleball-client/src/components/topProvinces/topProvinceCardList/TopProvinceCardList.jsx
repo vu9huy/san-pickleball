@@ -14,7 +14,7 @@ const TopProvinceCardList = () => {
     //         "Loading"
     //     ))}
     // </>);
-    if(!topProvinces && !topProvinces?.length) return "";
+    if(!topProvinces || !topProvinces?.length) return "";
 
     return (
         <div className={`${styles["province-card-list-wrapper"]} custom-scroll-bar`}>
