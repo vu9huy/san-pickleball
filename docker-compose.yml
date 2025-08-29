@@ -1,69 +1,23 @@
 version: "3.8"
 services:
-  # -------------------------
-  # Nginx Reverse Proxy
-  # -------------------------
-  nginx:
-    image: jwilder/nginx-proxy
-    container_name: nginx-proxy
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./certs:/etc/nginx/certs:rw
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./nginx/vhost.d:/etc/nginx/vhost.d
-      - ./nginx/html:/usr/share/nginx/html
-
-  letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    container_name: nginx-letsencrypt
-    restart: always
-    environment:
-      NGINX_PROXY_CONTAINER: nginx-proxy
-    volumes:
-      - ./certs:/etc/nginx/certs:rw
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./nginx/vhost.d:/etc/nginx/vhost.d
-      - ./nginx/html:/usr/share/nginx/html
-    depends_on:
-      - nginx
-
-  # -------------------------
-  # Next.js Client
-  # -------------------------
   client:
     image: gaaravu0/pickleball-client:latest
     container_name: nextjs-client
     restart: always
-    environment:
-      - VIRTUAL_HOST=sanpickleball.xyz,www.sanpickleball.xyz
-      - LETSENCRYPT_HOST=sanpickleball.xyz,www.sanpickleball.xyz
-      - LETSENCRYPT_EMAIL=your-email@example.com
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
 
-  # -------------------------
-  # Node.js Server
-  # -------------------------
   server:
     image: gaaravu0/pickleball-server:latest
     container_name: node-server
     restart: always
+    ports:
+      - "2704:2704"
     environment:
-      - VIRTUAL_HOST=sanpickleball.xyz,www.sanpickleball.xyz
-      - LETSENCRYPT_HOST=sanpickleball.xyz,www.sanpickleball.xyz
-      - LETSENCRYPT_EMAIL=your-email@example.com
       - MONGODB_URI=mongodb://mongo:27017/
-    expose:
-      - "2704"
     depends_on:
       - mongo
 
-  # -------------------------
-  # MongoDB
-  # -------------------------
   mongo:
     image: mongo:6
     container_name: mongo-db
@@ -71,6 +25,32 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - certbot-etc:/etc/letsencrypt        # <--- shared with certbot
+      - certbot-var:/var/lib/letsencrypt    # <--- shared with certbot
+      - ./nginx/www:/var/www/certbot        # <--- webroot for certbot
+    depends_on:
+      - client
+      - server
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./nginx/www:/var/www/certbot
+    entrypoint: sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done"
+
 volumes:
   mongo-data:
-  certs:
+  certbot-etc:
+  certbot-var:

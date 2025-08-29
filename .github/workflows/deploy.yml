@@ -68,30 +68,54 @@ jobs:
   # Deploy to Server
   # -------------------------
   deploy:
-    runs-on: ubuntu-latest
-    needs: [build-client, build-server]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  runs-on: ubuntu-latest
+  needs: [build-client, build-server]
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Copy files to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yml,nginx/default.conf"
-          target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
-          strip_components: 0
+    - name: Copy files to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "docker-compose.yml,nginx/default.conf,nginx/www"
+        target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
+        strip_components: 0
 
-      - name: Deploy
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd /home/${{ secrets.SSH_USER }}/san-pickleball
-            docker compose pull
-            docker compose up -d
-            docker image prune -f
+    - name: Deploy and SSL Setup
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd /home/${{ secrets.SSH_USER }}/san-pickleball
+          
+          # Make sure webroot exists for certbot
+          mkdir -p ./nginx/www
+
+          # Start all services (Nginx must be up for certbot challenge)
+          docker compose pull
+          docker compose up -d nginx client server mongo
+
+          # Run certbot one-time (only if cert doesn’t exist yet)
+          if [ ! -f "./certbot-etc/live/sanpickleball.xyz/fullchain.pem" ]; then
+            echo "Requesting Let's Encrypt certificates..."
+            docker compose run --rm certbot certonly --webroot \
+              -w /var/www/certbot \
+              -d sanpickleball.xyz \
+              -d www.sanpickleball.xyz \
+              --email your-email@example.com \
+              --agree-tos \
+              --non-interactive
+          else
+            echo "SSL certificates already exist, skipping request"
+          fi
+
+          # Restart nginx to load new certificates
+          docker compose restart nginx
+
+          # Clean up unused images
+          docker image prune -f
