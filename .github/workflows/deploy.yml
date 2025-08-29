@@ -72,3 +72,13 @@ jobs:
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
             docker compose pull
             docker compose up -d
+            
+      # --- Clean up dangling images ---
+      - name: Clean up dangling Docker images
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker image prune -f
