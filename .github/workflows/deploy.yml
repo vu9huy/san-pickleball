@@ -74,16 +74,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Copy files and deploy
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "docker-compose.yml,nginx/default.conf"
+          target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
+          strip_components: 0
+
+      - name: Deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            mkdir -p /home/${{ secrets.SSH_USER }}/san-pickleball/nginx
-            cp docker-compose.yml /home/${{ secrets.SSH_USER }}/san-pickleball/
-            cp nginx/default.conf /home/${{ secrets.SSH_USER }}/san-pickleball/nginx/
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
             docker compose pull
             docker compose up -d
