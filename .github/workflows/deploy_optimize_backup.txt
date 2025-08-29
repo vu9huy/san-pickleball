@@ -69,11 +69,8 @@ jobs:
   # -------------------------
   deploy:
     runs-on: ubuntu-latest
-    needs: [build-client, build-server]
+    needs: [build-client, build-server]  # waits for builds to finish
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Copy files and deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
