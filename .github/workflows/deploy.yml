@@ -49,7 +49,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             mkdir -p /home/${{ secrets.SSH_USER }}/san-pickleball/nginx
-            rm -f /home/${{ secrets.SSH_USER }}/san-pickleball/nginx/default.conf
 
       # --- Copy nginx/default.conf to server ---
       - name: Upload Nginx config
