@@ -31,8 +31,6 @@ jobs:
           context: ./pickleball-client
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest,mode=max
 
   # -------------------------
   # Build & Push Server Image
@@ -61,8 +59,6 @@ jobs:
           context: ./pickleball-server
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest,mode=max
 
   # -------------------------
   # Deploy to Server
