@@ -32,7 +32,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest
 
-  # -------------------------
+  # ------------------------- 
   # Build & Push Server Image
   # -------------------------
   build-server:
