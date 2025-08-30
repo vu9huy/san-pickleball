@@ -92,33 +92,17 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
+
+            # Ensure webroot exists
             mkdir -p ./nginx/www
-            
-            # Check if certificates exist
-            if [ ! -f "./nginx/ssl/fullchain.pem" ]; then
-              echo "Getting initial SSL certificates..."
-              
-              # Start nginx in HTTP-only mode first
-              docker compose up -d client server mongo
-              
-              # Get certificates
-              docker run --rm \
-                -v ./nginx/www:/var/www/certbot \
-                -v certbot-etc:/etc/letsencrypt \
-                -v certbot-var:/var/lib/letsencrypt \
-                certbot/certbot certonly \
-                --webroot \
-                --webroot-path=/var/www/certbot \
-                --email your-email@example.com \
-                --agree-tos \
-                --no-eff-email \
-                -d sanpickleball.xyz \
-                -d www.sanpickleball.xyz
-            fi
-            
-            # Now start full stack with HTTPS
+
+            # Stop any old containers and remove orphans
             docker compose down --remove-orphans
+
+            # Pull latest images & start all containers
             docker compose pull
             docker compose up -d
+
+            # Clean up unused images
             docker image prune -f
 
