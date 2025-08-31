@@ -30,7 +30,6 @@ services:
     environment:
       - MONGODB_URI=mongodb://mongo:27017/
       - ENVIROMENT=production
-      - MONGODB_URI=mongodb://127.0.0.1:27017/
       - DATABASE_NAME=picklebal
       - APP_HOST=localhost
       - PORT=2704
