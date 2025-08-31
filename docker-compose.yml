@@ -21,9 +21,6 @@ services:
     image: mongo:6
     container_name: mongo-db
     restart: always
-    ports:
-      - "27017:27017"
-    command: ["mongod", "--bind_ip_all"]
     volumes:
       - mongo-data:/data/db
 
