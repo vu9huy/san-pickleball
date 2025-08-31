@@ -22,8 +22,8 @@ services:
     container_name: mongo-db
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: sanpickleball
-      MONGO_INITDB_ROOT_PASSWORD: sanpickleball
+      MONGO_INITDB_ROOT_USERNAME: quanvu
+      MONGO_INITDB_ROOT_PASSWORD: quanvu
     volumes:
       - mongo-data:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
