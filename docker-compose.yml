@@ -13,7 +13,7 @@ services:
     ports:
       - "2704:2704"
     environment:
-      - MONGODB_URI=mongodb://sanpickleball_user:sanpickleball_password@mongo:27017/sanpickleball?authSource=sanpickleball
+      - MONGODB_URI=mongodb://mongo:27017/
     depends_on:
       - mongo
 
@@ -21,12 +21,10 @@ services:
     image: mongo:6
     container_name: mongo-db
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: quanvu
-      MONGO_INITDB_ROOT_PASSWORD: quanvu
+    ports:
+      - "27018:27017"
     volumes:
       - mongo-data:/data/db
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
   nginx:
     image: nginx:alpine
