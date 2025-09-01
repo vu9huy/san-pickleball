@@ -3,8 +3,6 @@ services:
     image: gaaravu0/pickleball-client:latest
     container_name: nextjs-client
     restart: always
-    env_file:
-      - .env.client
     ports:
       - "8080:8080"
 
@@ -14,8 +12,6 @@ services:
     restart: always
     ports:
       - "2704:2704"
-    env_file:
-      - .env.server
     depends_on:
       - mongo
 
