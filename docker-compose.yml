@@ -3,21 +3,8 @@ services:
     image: gaaravu0/pickleball-client:latest
     container_name: nextjs-client
     restart: always
-    environment:
-      - NEXT_PUBLIC_NODE_ENV=production
-      - NEXT_PUBLIC_DOMAIN=sanpickleball.xyz
-      - NEXT_PUBLIC_PORT=8080
-      - NEXT_PUBLIC_DEV_BASE_API_ENDPOINT=http://localhost:2704/api/v1
-      - NEXT_PUBLIC_PRODUCT_BASE_API_ENDPOINT=https://sanpickleball.com/api/v1
-      - NEXT_PUBLIC_MAPBOX_API_KEY=pk.eyJ1IjoidnU5aHV5IiwiYSI6ImNseDdmdGVwdzB1aGsya3M1dmNybnE4enYifQ.Cx99uFgHkRZBKi7ygN3q7Q
-      - NEXT_PUBLIC_GOOGLE_MAP_API_KEY=AIzaSyCaef-4F8_pKcj_DkiPAj0grPqzTWdvfVs
-      - NEXT_PUBLIC_GOOGLE_MAP_ID=729e7c3cebfeadab
-      - NEXTAUTH_URL=http://localhost:8080
-      - NEXT_PUBLIC_FACEBOOK_APP_ID=812676017632806
-      - NEXT_PUBLIC_FACEBOOK_CHAT_URL=m.me/353395997860867
-      - NEXT_PUBLIC_GOOGLE_OAUTH2_CLIENT_ID=82204777413-s6rvkc5nkgeh19s25besi5abil8jtcgm.apps.googleusercontent.com
-      - NEXT_PUBLIC_JWT_REFRESH_EXPIRATION_DAYS=90
-      - NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=du2azaqnn
+    env_file:
+      - .env.client
     ports:
       - "8080:8080"
 
@@ -27,30 +14,8 @@ services:
     restart: always
     ports:
       - "2704:2704"
-    environment:
-      - MONGODB_URI=mongodb://mongo:27017/
-      - ENVIROMENT=production
-      - DATABASE_NAME=picklebal
-      - APP_HOST=localhost
-      - PORT=2704
-      - DOMAIN=http://localhost:2704
-      - FRONTEND_DOMAIN=http://localhost:3000
-      - JWT_SECRET=5489fdkdfiu43fdkjfdoidsmnds
-      - JWT_ACCESS_EXPIRATION_MINUTES=15
-      - JWT_REFRESH_EXPIRATION_DAYS=90
-      - JWT_RESET_PASSWORD_EXPIRATION_MINUTES=20
-      - JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=20
-      - CLOUDINARY_CLOUD_NAME=du2azaqnn
-      - CLOUDINARY_API_KEY=535965576436827
-      - CLOUDINARY_API_SECRET=jSQivkCUGHSsMCtT343u-sKqqak
-      - OWNER_CODE=45985enmfdkj3490
-      - GOOGLE_OAUTH_CLIENT_ID=321069305031-gjo58mu5nn1o06d74amuia1m50g7g0ru.apps.googleusercontent.com
-      - GOOGLE_OAUTH_CLIENT_SECRET=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
-      - GOOGLE_OAUTH_REFRESH_TOKEN=1//04WuSDOvejFMcCgYIARAAGAQSNwF-L9Irkro9Ta-1OuonMyf1GhNnMS4-eQSOWvezYv2DEdMPo2f5uKPAi1NsL6ls_s3Z13BzEAY
-      - EMAIL_ADDRESS=sanpickleball@gmail.com
-      - EMAIL_PASSWORD=quan27041998vu
-      - GOOGLE_ANALYTICS_PROPERTY_ID=465695350
-      
+    env_file:
+      - .env.server
     depends_on:
       - mongo
 
