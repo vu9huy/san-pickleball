@@ -12,6 +12,29 @@ services:
     restart: always
     ports:
       - "2704:2704"
+    environment:
+      - ENVIROMENT=production
+      - MONGODB_URI=mongodb://127.0.0.1:27017/
+      - DATABASE_NAME=pickleball
+      - APP_HOST=localhost
+      - PORT=2704
+      - DOMAIN=http://localhost:2704
+      - FRONTEND_DOMAIN=http://localhost:3000
+      - JWT_SECRET=5489fdkdfiu43fdkjfdoidsmnds
+      - JWT_ACCESS_EXPIRATION_MINUTES=15
+      - JWT_REFRESH_EXPIRATION_DAYS=90
+      - JWT_RESET_PASSWORD_EXPIRATION_MINUTES=20
+      - JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=20
+      - CLOUDINARY_CLOUD_NAME=du2azaqnn
+      - CLOUDINARY_API_KEY=535965576436827
+      - CLOUDINARY_API_SECRET=jSQivkCUGHSsMCtT343u-sKqqak
+      - OWNER_CODE=45985enmfdkj3490
+      - GOOGLE_OAUTH_CLIENT_ID=321069305031-gjo58mu5nn1o06d74amuia1m50g7g0ru.apps.googleusercontent.com
+      - GOOGLE_OAUTH_CLIENT_SECRET=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
+      - GOOGLE_OAUTH_REFRESH_TOKEN=1//04WuSDOvejFMcCgYIARAAGAQSNwF-L9Irkro9Ta-1OuonMyf1GhNnMS4-eQSOWvezYv2DEdMPo2f5uKPAi1NsL6ls_s3Z13BzEAY
+      - EMAIL_ADDRESS=sanpickleball@gmail.com
+      - EMAIL_PASSWORD=quan27041998vu
+      - GOOGLE_ANALYTICS_PROPERTY_ID=465695350
     depends_on:
       - mongo
 
