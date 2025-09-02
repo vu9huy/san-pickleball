@@ -28,7 +28,6 @@ const nextConfig = {
         ],
         // unoptimized: true,
     },
-    output: 'standalone',
 
     // Config svgr package
     // webpack(config) {
