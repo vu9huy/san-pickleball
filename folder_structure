@@ -1,0 +1,15 @@
+|── pickleball
+    |── .github/
+        |── workflows/
+            |── deploy_first.txt
+            |── deploy_optimize_1.txt
+            |── deploy_ssl.txt
+            |── deploy.yml
+    |── nginx/
+    |── pickleball-client/
+        |── Dockerfile
+    |── pickleball-server/
+        |── Dockerfile
+    |── .gitignore
+    |── docker-compose_backup.yml
+    |── docker-compose.yml
