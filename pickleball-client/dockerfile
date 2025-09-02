@@ -1,43 +1,76 @@
-# Stage 1: Build React app
-FROM node:18 AS builder
+# # Stage 1: Build React app
+# FROM node:18-alpine AS builder
+# WORKDIR /app
+
+# # Build-time environment variables (baked into Next.js bundle)
+# ENV NEXT_PUBLIC_NODE_ENV=production \
+#     NEXT_PUBLIC_DOMAIN=sanpickleball.xyz \
+#     NEXT_PUBLIC_PORT=3000 \
+#     NEXT_PUBLIC_DEV_BASE_API_ENDPOINT=http://localhost:2704/api/v1 \
+#     NEXT_PUBLIC_PRODUCT_BASE_API_ENDPOINT=https://sanpickleball.xyz/api/v1 \
+#     NEXT_PUBLIC_MAPBOX_API_KEY=pk.eyJ1IjoidnU5aHV5IiwiYSI6ImNseDdmdGVwdzB1aGsya3M1dmNybnE4enYifQ.Cx99uFgHkRZBKi7ygN3q7Q \
+#     NEXT_PUBLIC_GOOGLE_MAP_API_KEY=AIzaSyCaef-4F8_pKcj_DkiPAj0grPqzTWdvfVs \
+#     NEXT_PUBLIC_GOOGLE_MAP_ID=729e7c3cebfeadab \
+#     NEXT_PUBLIC_FACEBOOK_APP_ID=812676017632806 \
+#     NEXT_PUBLIC_FACEBOOK_CHAT_URL=m.me/353395997860867 \
+#     NEXT_PUBLIC_GOOGLE_OAUTH2_CLIENT_ID=82204777413-s6rvkc5nkgeh19s25besi5abil8jtcgm.apps.googleusercontent.com \
+#     NEXT_PUBLIC_JWT_REFRESH_EXPIRATION_DAYS=90 \
+#     NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=du2azaqnn
+
+# COPY package.json yarn.lock ./
+# RUN yarn install --frozen-lockfile
+# COPY . .
+# RUN yarn build
+
+# # Stage 2: Run the Next.js app
+# FROM node:18-alpine AS runner
+# WORKDIR /app
+
+# # Runtime-only envs (not exposed to browser unless NEXT_PUBLIC_)
+
+# COPY --from=builder /app/public ./public
+# COPY --from=builder /app/.next ./.next
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/package.json ./package.json
+
+# CMD ["yarn", "start"]
+
+
+# Base image
+FROM node:18-alpine AS base
+
+# -----------------------
+# Stage 1: Dependencies
+# -----------------------
+FROM base AS deps
 WORKDIR /app
-
-# Build-time environment variables (baked into Next.js bundle)
-ENV NEXT_PUBLIC_NODE_ENV=production \
-    NEXT_PUBLIC_DOMAIN=sanpickleball.xyz \
-    NEXT_PUBLIC_PORT=3000 \
-    NEXT_PUBLIC_DEV_BASE_API_ENDPOINT=http://localhost:2704/api/v1 \
-    NEXT_PUBLIC_PRODUCT_BASE_API_ENDPOINT=https://sanpickleball.xyz/api/v1 \
-    NEXT_PUBLIC_MAPBOX_API_KEY=pk.eyJ1IjoidnU5aHV5IiwiYSI6ImNseDdmdGVwdzB1aGsya3M1dmNybnE4enYifQ.Cx99uFgHkRZBKi7ygN3q7Q \
-    NEXT_PUBLIC_GOOGLE_MAP_API_KEY=AIzaSyCaef-4F8_pKcj_DkiPAj0grPqzTWdvfVs \
-    NEXT_PUBLIC_GOOGLE_MAP_ID=729e7c3cebfeadab \
-    NEXTAUTH_URL=http://localhost:3000 \
-    NEXT_PUBLIC_FACEBOOK_APP_ID=812676017632806 \
-    FACEBOOK_APP_SECRET="" \
-    NEXT_PUBLIC_FACEBOOK_CHAT_URL=m.me/353395997860867 \
-    NEXT_PUBLIC_GOOGLE_OAUTH2_CLIENT_ID=82204777413-s6rvkc5nkgeh19s25besi5abil8jtcgm.apps.googleusercontent.com \
-    NEXT_PUBLIC_JWT_REFRESH_EXPIRATION_DAYS=90 \
-    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=du2azaqnn
-
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
+
+# -----------------------
+# Stage 2: Builder
+# -----------------------
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN yarn build
 
-# Stage 2: Run the Next.js app
-FROM node:18-alpine AS runner
+# -----------------------
+# Stage 3: Runner
+# -----------------------
+FROM base AS runner
 WORKDIR /app
+ENV NODE_ENV=production
 
-# Runtime-only envs (not exposed to browser unless NEXT_PUBLIC_)
-ENV NODE_ENV=production \
-    NEXTAUTH_URL=http://localhost:3000 \
-    FACEBOOK_APP_SECRET=""
-
+# Copy only the standalone build and static assets
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
 
+# Expose Next.js port
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+# Start Next.js standalone server
+CMD ["node", "server.js"]
+
