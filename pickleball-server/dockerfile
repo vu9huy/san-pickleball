@@ -40,6 +40,6 @@ COPY --from=builder /app/build ./build
 # Set user and environment
 USER nextjs
 ENV NODE_ENV=production
-EXPOSE 3000
+EXPOSE 2704
 
 CMD ["yarn", "start"]
