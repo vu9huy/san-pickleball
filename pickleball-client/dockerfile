@@ -1,6 +1,60 @@
-# Stage 1: Build React app
-FROM node:18 AS builder
+# # Stage 1: Build React app
+# FROM node:18 AS builder
+# WORKDIR /app
+
+# # Build-time environment variables (baked into Next.js bundle)
+# ENV NEXT_PUBLIC_NODE_ENV=production \
+#     NEXT_PUBLIC_DOMAIN=sanpickleball.xyz \
+#     NEXT_PUBLIC_PORT=3000 \
+#     NEXT_PUBLIC_DEV_BASE_API_ENDPOINT=http://localhost:2704/api/v1 \
+#     NEXT_PUBLIC_PRODUCT_BASE_API_ENDPOINT=https://sanpickleball.xyz/api/v1 \
+#     NEXT_PUBLIC_MAPBOX_API_KEY=pk.eyJ1IjoidnU5aHV5IiwiYSI6ImNseDdmdGVwdzB1aGsya3M1dmNybnE4enYifQ.Cx99uFgHkRZBKi7ygN3q7Q \
+#     NEXT_PUBLIC_GOOGLE_MAP_API_KEY=AIzaSyCaef-4F8_pKcj_DkiPAj0grPqzTWdvfVs \
+#     NEXT_PUBLIC_GOOGLE_MAP_ID=729e7c3cebfeadab \
+#     NEXT_PUBLIC_FACEBOOK_APP_ID=812676017632806 \
+#     NEXT_PUBLIC_FACEBOOK_CHAT_URL=m.me/353395997860867 \
+#     NEXT_PUBLIC_GOOGLE_OAUTH2_CLIENT_ID=82204777413-s6rvkc5nkgeh19s25besi5abil8jtcgm.apps.googleusercontent.com \
+#     NEXT_PUBLIC_JWT_REFRESH_EXPIRATION_DAYS=90 \
+#     NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=du2azaqnn
+
+# COPY package.json yarn.lock ./
+# RUN yarn install --frozen-lockfile
+# COPY . .
+# RUN yarn build
+
+# # Stage 2: Run the Next.js app
+# FROM node:18-alpine AS runner
+# WORKDIR /app
+
+# ENV NODE_ENV=production
+# # Runtime-only envs (not exposed to browser unless NEXT_PUBLIC_)
+
+# COPY --from=builder /app/public ./public
+# COPY --from=builder /app/.next ./.next
+# COPY --from=builder /app/node_modules ./node_modules
+# COPY --from=builder /app/package.json ./package.json
+
+# EXPOSE 8080
+
+# CMD ["yarn", "start"]
+
+
+# Stage 1: Dependencies
+FROM node:18-alpine AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
+
+# Copy package files and install ALL dependencies (including dev)
+COPY package.json yarn.lock* ./
+RUN yarn install --frozen-lockfile
+
+# Stage 2: Build the application
+FROM node:18-alpine AS builder
+WORKDIR /app
+
+# Copy dependencies from deps stage
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 
 # Build-time environment variables (baked into Next.js bundle)
 ENV NEXT_PUBLIC_NODE_ENV=production \
@@ -17,23 +71,39 @@ ENV NEXT_PUBLIC_NODE_ENV=production \
     NEXT_PUBLIC_JWT_REFRESH_EXPIRATION_DAYS=90 \
     NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=du2azaqnn
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
-COPY . .
+# Disable Next.js telemetry
+ENV NEXT_TELEMETRY_DISABLED=1
+
 RUN yarn build
 
-# Stage 2: Run the Next.js app
+# Stage 3: Production runtime
 FROM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-# Runtime-only envs (not exposed to browser unless NEXT_PUBLIC_)
+ENV NEXT_TELEMETRY_DISABLED=1
 
+# Create a non-root user for security
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy necessary files from builder
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
 
-EXPOSE 8080
+# Set the correct permission for prerender cache
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
 
-CMD ["yarn", "start"]
+# Copy built application
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+# Use Node.js directly for better performance
+CMD ["node", "server.js"]
