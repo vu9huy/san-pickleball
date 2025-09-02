@@ -10,7 +10,7 @@ import useViewMap from "@/customHook/useViewMap";
 
 
 const VisglMap = ({ viewState }) => {
-    console.log("GOOGLE_MAP_MAP_ID", GOOGLE_MAP_MAP_ID);
+    // console.log("GOOGLE_MAP_MAP_ID", GOOGLE_MAP_MAP_ID);
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 

@@ -8,10 +8,10 @@ import { useGetWeatherData } from "@/api/thirdPartyApi/callApi";
 
 const WeatherList = ({ province, date }) => {
 
-    const provinceName = province.label;
-    const geolocation = province.geolocation;
-    const forecastDays = 10;
-
+    const provinceName = province?.label || "Hà Nội";
+    const geolocation = province?.geolocation || { latitude: 21.028511, longitude: 105.804817 };
+    const forecastDays = 7;
+    
     const { data: response, isPending, isError, refetch: refetchGetWeatherData } = useGetWeatherData({ province: provinceName, geolocation, forecastDays });
 
     const responseData = response?.data;

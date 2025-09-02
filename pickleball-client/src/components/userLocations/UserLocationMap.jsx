@@ -11,7 +11,7 @@ const DEFAULT_RADIUS = 50;
 
 const UserLocationMap = ({userData}) => {  
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [radius, setRadius] = useState(10);
+  const [radius, setRadius] = useState(30);
   const [minLevel, setMinLevel] = useState(2);
   const [maxLevel, setMaxLevel] = useState(6);
   const [showControls, setShowControls] = useState(false);
