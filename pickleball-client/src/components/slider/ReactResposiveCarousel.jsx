@@ -7,7 +7,6 @@
 // import ArrowKeenSlider from "./arrow/ArrowKeenSlider";
 // import { useState } from "react";
 // import "./SlideModal.css";
-// import Image from "next/image";
 // import Loading from "../loading/Loading";
 
 // const ReactResponsiveCarousel = ({ images, slideImageClass, isLazy, displayType }) => {
@@ -124,7 +123,6 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { useState, useCallback, useEffect } from 'react';
-import Image from "next/image";
 import SliderImage from "./sliderImage/SliderImage";
 import ArrowKeenSlider from "./arrow/ArrowKeenSlider";
 import Loading from "../loading/Loading";
@@ -287,13 +285,20 @@ const ReactResponsiveCarousel = ({ images, slideImageClass, isLazy, displayType 
                             )}
                             <div style={{ visibility: loadingImage ? "hidden" : "visible", maxHeight: "100%" }}>
                                 {currentImage.src && (
-                                    <Image 
-                                        src={currentImage.src} 
-                                        alt={currentImage.alt || "pickleball"} 
-                                        fill 
-                                        loading="lazy" 
-                                        onLoadingComplete={handleOnloadImage} 
-                                    />
+                                    <img
+                                        src={currentImage.src}
+                                        alt={currentImage.alt || "pickleball"}
+                                        loading="lazy"
+                                        onLoad={handleOnloadImage}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "cover",
+                                            position: "absolute",
+                                            top: 0,
+                                            left: 0,
+                                        }}
+                                        />
                                 )}
                             </div>
                         </div>

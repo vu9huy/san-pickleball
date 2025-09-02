@@ -1,4 +1,3 @@
-import Image from "next/image";
 import style from "./page.module.css";
 
 const GetLocationGuide = () => {
@@ -13,16 +12,17 @@ const GetLocationGuide = () => {
                 <li className={style["step"]}>- <b>Bước 3</b>: Click chuột phải vào vị trí sân, sẽ thấy hiện lên vị trí tọa độ ở dòng đầu.</li>
             </ul>
             <figure className="image">
-                {/* <img
+                {/* <Image
                     src="https://res.cloudinary.com/du2azaqnn/image/upload/v1722351107/Screen_Shot_2024-07-29_at_14.58.13_nweg7w_zea4jf.png"
                     width={559}
                     height={567}
                     alt="Lấy kinh độ vĩ độ trên google map" /> */}
-                <Image
+                <img
                     src="https://res.cloudinary.com/du2azaqnn/image/upload/v1722351107/Screen_Shot_2024-07-29_at_14.58.13_nweg7w_zea4jf.png"
-                    width={559}
-                    height={567}
-                    alt="Lấy kinh độ vĩ độ trên google map" />
+                    width="559"
+                    height="567"
+                    alt="Lấy kinh độ vĩ độ trên google map"
+                    />
             </figure>
             <ul>
                 <li className={style["step"]}>

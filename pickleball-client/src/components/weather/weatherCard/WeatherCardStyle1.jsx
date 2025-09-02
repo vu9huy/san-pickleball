@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./WeatherCardStyle1.module.css";
 import weatherConditions from "@/data/weather/weatherCode.json";
 import uvIndexScale from "@/helpers/uvIndexScale";
@@ -29,7 +28,11 @@ const WeatherCardStyle1Front = ({ weatherData }) => {
             <div className={styles["weather-card-body"]}>
                 <div className={styles["weather-card-image"]}>
                     {/* <img fill src={condition.day.image} alt={condition.day.description} /> */}
-                    <Image fill src={condition.day.image} alt={condition.day.description} />
+                    <img
+                        src={condition.day.image}
+                        alt={condition.day.description}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
                 </div>
                 <span className={styles["weather-card-condition"]}>{condition.day.description}</span>
             </div>

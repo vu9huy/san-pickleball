@@ -1,6 +1,5 @@
 import { convertVietNamMoneyFormat } from "@/utils/others/convertMoneyFormat";
 import styles from "./CourtPrice.module.css";
-import Image from "next/image";
 import ImageModal from "@/components/imageModal/ImageModal";
 
 const CourtPrice = ({ bookingInfo }) => {

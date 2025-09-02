@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import styles from "./CourtCard.module.css";
 import CourtDescription from "../courtInfoComponents/courtDescription/CourtDescription";
 import Link from "next/link";
@@ -11,8 +10,6 @@ const CourtCard = ({ court }) => {
             <div className={styles["court-card__images"]}>
                 <img src={court.images[0]?.url || court.googlePlaceImages[0]?.url} alt={`${court?.name}`} />
                 <img src={court.images[1]?.url || court.googlePlaceImages[1]?.url} alt={`${court?.name}`} loading="lazy" />
-                {/* <Image src={court.images[0]?.url} alt={`${court?.name}`} fill />
-                <Image src={court.images[1]?.url} alt={`${court?.name}`} fill loading="lazy" /> */}
             </div>
             <div className={styles["court-card__info"]}>
                 <div className={styles["court-card__content"]}>

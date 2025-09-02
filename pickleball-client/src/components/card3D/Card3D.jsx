@@ -26,6 +26,18 @@ const Card3D = () => {
                                 <div className={styles["card-image"]}>
                                     {/* <img src={card.image} alt="" /> */}
                                     <Image src={card.image} fill alt="test" />
+                                    {/* <img
+                                        src={card.image}
+                                        alt="test"
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "cover",
+                                            position: "absolute",
+                                            top: 0,
+                                            left: 0,
+                                        }}
+                                    /> */}
                                 </div>
                                 <p>Dragon {index + 1}</p>
                             </div>

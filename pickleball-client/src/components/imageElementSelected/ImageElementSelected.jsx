@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { IconSprites1 } from "../iconSprites/IconSprites";
 import styles from "./ImageElementSelected.module.css";
 
@@ -15,7 +14,18 @@ const ImageElementSelected = ({ index, file, removeImage }) => {
         <div key={index} className={styles["upload-image-preview-container"]}>
             {checkImageFile ?
                 <img src={file?.preview} alt={`preview ${index}`} /> :
-                <Image src={file?.url} alt={`preview ${index}`} fill></Image>}
+                <img
+                    src={file?.url}
+                    alt={`preview ${index}`}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                    }}
+                    />}
             <div className={`${styles["upload-image-remove-preview"]} ${styles[exceedSize ? "style-2" : ""]}`} onClick={() => removeImage(index)}>
                 <IconSprites1 id="sprites-icon-close" className={styles["upload-image-remove-icon"]} />
             </div>
