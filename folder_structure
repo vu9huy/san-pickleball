@@ -7,9 +7,9 @@
             |── deploy.yml
     |── nginx/
     |── pickleball-client/
-        |── Dockerfile
+        |── dockerfile
     |── pickleball-server/
-        |── Dockerfile
+        |── dockerfile
     |── .gitignore
     |── docker-compose_backup.yml
     |── docker-compose.yml
