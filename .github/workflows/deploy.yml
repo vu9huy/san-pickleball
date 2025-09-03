@@ -32,6 +32,8 @@
 #           context: ./pickleball-${{ matrix.service }}
 #           push: true
 #           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-${{ matrix.service }}:latest
+#           # cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-${{ matrix.service }}:buildcache
+#           # cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/pickleball-${{ matrix.service }}:buildcache,mode=max
 
 #   # -------------------------
 #   # Deploy to Server
@@ -74,7 +76,6 @@
 
 #             # Clean up unused images
 #             docker image prune -f
-
 
 
 name: Build and Deploy
@@ -211,6 +212,116 @@ jobs:
   # Deploy to Server
   # -------------------------
   deploy:
+    runs-on: ubuntu-latest
+    needs: [build-client, build-server]
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            docker-compose.yml
+            nginx/
+          sparse-checkout-cone-mode: false
+
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Copy deployment files
+        run: |
+          # Use rsync for better file transfer with progress
+          rsync -avz --progress \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            docker-compose.yml \
+            nginx/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/san-pickleball/
+
+      - name: Deploy application
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd /home/${{ secrets.SSH_USER }}/san-pickleball
+            
+            # Set environment variables
+            export COMPOSE_PROJECT_NAME=san-pickleball
+            
+            # Ensure required directories exist
+            mkdir -p ./nginx/www ./data/db
+            
+            # Health check before deployment
+            echo "Starting deployment..."
+            
+            # Graceful shutdown with timeout
+            if docker compose ps -q | grep -q .; then
+              echo "Stopping existing containers..."
+              docker compose down --timeout 30 --remove-orphans
+            fi
+            
+            # Pull latest images with retry logic
+            echo "Pulling latest images..."
+            for i in {1..3}; do
+              if docker compose pull; then
+                break
+              else
+                echo "Pull attempt $i failed, retrying..."
+                sleep 5
+              fi
+            done
+            
+            # Start services with health checks
+            echo "Starting services..."
+            docker compose up -d --wait --wait-timeout 60
+            
+            # Verify deployment
+            echo "Verifying deployment..."
+            if docker compose ps --format json | jq -r '.[].Health' | grep -q unhealthy; then
+              echo "Some containers are unhealthy!"
+              docker compose ps
+              exit 1
+            fi
+            
+            # Cleanup old images (keep last 3 versions)
+            echo "Cleaning up old images..."
+            docker image prune -f --filter "until=72h"
+            
+            echo "Deployment completed successfully!"
+          EOF
+
+      - name: Health check
+        run: |
+          # Wait for services to be ready
+          sleep 30
+          
+          # Check if the application is responding
+          if [ -n "${{ secrets.HEALTH_CHECK_URL }}" ]; then
+            for i in {1..5}; do
+              if curl -f -s "${{ secrets.HEALTH_CHECK_URL }}" > /dev/null; then
+                echo "Health check passed!"
+                break
+              else
+                echo "Health check attempt $i failed, retrying..."
+                sleep 10
+              fi
+            done
+          fi
+
+      - name: Notify deployment status
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          channel: '#deployments'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
     runs-on: ubuntu-latest
     needs: [build]
     # Only deploy on main branch pushes (not PRs)
