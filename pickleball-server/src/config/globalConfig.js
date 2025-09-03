@@ -10,7 +10,7 @@ const globalConfig = {
     collectionName: envVars.DATABASE_NAME,
     ownerCode: envVars.OWNER_CODE,
     mongodb: {
-        url: envVars.MONGODB_URI + envVars.DATABASE_NAME
+        url: `${envVars.MONGODB_URI}${envVars.DATABASE_NAME}`
     },
     jwt: {
         secret: envVars.JWT_SECRET,

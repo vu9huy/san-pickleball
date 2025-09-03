@@ -46,4 +46,4 @@ async function exportCollection() {
     }
 }
 
-exportCollection();
+// exportCollection();
