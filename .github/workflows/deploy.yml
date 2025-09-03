@@ -1,91 +1,211 @@
+# name: Build and Deploy
+
+# on:
+#   push:
+#     branches: [main]
+
+# jobs:
+#   # -------------------------
+#   # Build & Push Images
+#   # -------------------------
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         service: [client, server]
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Log in to Docker Hub
+#         uses: docker/login-action@v2
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v3
+
+#       - name: Build & Push Docker Image
+#         uses: docker/build-push-action@v4
+#         with:
+#           context: ./pickleball-${{ matrix.service }}
+#           push: true
+#           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-${{ matrix.service }}:latest
+
+#   # -------------------------
+#   # Deploy to Server
+#   # -------------------------
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Copy files to server
+#         uses: appleboy/scp-action@v0.1.7
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USER }}
+#           key: ${{ secrets.SSH_KEY }}
+#           source: "docker-compose.yml,nginx/default.conf,nginx/www"
+#           target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
+#           strip_components: 0
+
+#       - name: Deploy
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USER }}
+#           key: ${{ secrets.SSH_KEY }}
+#           script: |
+#             cd /home/${{ secrets.SSH_USER }}/san-pickleball
+
+#             # Ensure webroot exists
+#             mkdir -p ./nginx/www
+
+#             # Stop any old containers and remove orphans
+#             docker compose down --remove-orphans
+
+#             # Pull latest images & start all containers
+#             docker compose pull
+#             docker compose up -d
+
+#             # Clean up unused images
+#             docker image prune -f
+
+
+
 name: Build and Deploy
 
 on:
   push:
     branches: [main]
+  # Add pull request trigger for testing builds without deployment
+  pull_request:
+    branches: [main]
+
+# Global environment variables
+env:
+  REGISTRY: docker.io
+  IMAGE_PREFIX: ${{ secrets.DOCKERHUB_USERNAME }}
+
+# Cancel in-progress workflows on new commits
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  # # -------------------------
-  # # Build & Push Client Image
-  # # -------------------------
-  # build-client:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
-
-  #     - name: Log in to Docker Hub
-  #       uses: docker/login-action@v2
-  #       with:
-  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
-  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  #     - name: Set up Docker Buildx
-  #       uses: docker/setup-buildx-action@v3
-  #       with:
-  #         driver: docker-container
-
-  #     - name: Build & Push Client Docker Image
-  #       uses: docker/build-push-action@v4
-  #       with:
-  #         context: ./pickleball-client
-  #         push: true
-  #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-client:latest
-
-  # # ------------------------- 
-  # # Build & Push Server Image
-  # # -------------------------
-  # build-server:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
-
-  #     - name: Log in to Docker Hub
-  #       uses: docker/login-action@v2
-  #       with:
-  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
-  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  #     - name: Set up Docker Buildx
-  #       uses: docker/setup-buildx-action@v3
-  #       with:
-  #         driver: docker-container
-
-  #     - name: Build & Push Server Docker Image
-  #       uses: docker/build-push-action@v4
-  #       with:
-  #         context: ./pickleball-server
-  #         push: true
-  #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-server:latest
-
   # -------------------------
-  # Build & Push Images
+  # Build Matrix Job (Parallel)
   # -------------------------
   build:
     runs-on: ubuntu-latest
+    # Only build on pushes to main or PRs
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    
     strategy:
       matrix:
         service: [client, server]
+        include:
+          - service: client
+            context: ./pickleball-client
+            dockerfile: ./pickleball-client/Dockerfile
+          - service: server
+            context: ./pickleball-server
+            dockerfile: ./pickleball-server/Dockerfile
+    
+    # Set outputs for the deploy job
+    outputs:
+      client-digest: ${{ steps.build-client.outputs.digest }}
+      server-digest: ${{ steps.build-server.outputs.digest }}
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          # Fetch full history for better caching
+          fetch-depth: 0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
-      - name: Build & Push Docker Image
-        uses: docker/build-push-action@v4
         with:
-          context: ./pickleball-${{ matrix.service }}
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pickleball-${{ matrix.service }}:latest
+          driver: docker-container
+          # Enable advanced features
+          buildkitd-flags: --allow-insecure-entitlement network.host
+
+      - name: Log in to Docker Hub
+        # Only login on main branch pushes (not PRs)
+        if: github.ref == 'refs/heads/main'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/pickleball-${{ matrix.service }}
+          tags: |
+            # Branch name for PRs
+            type=ref,event=branch
+            type=ref,event=pr
+            # Latest tag for main branch
+            type=raw,value=latest,enable={{is_default_branch}}
+            # SHA for traceability
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push Docker image
+        id: build-${{ matrix.service }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
+          # Only push on main branch, just build on PRs
+          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          # Enable caching
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          # Build arguments for optimization
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+          # Multi-platform builds (optional)
+          platforms: linux/amd64
+          # Security scanning
+          provenance: true
+          sbom: true
+
+  # -------------------------
+  # Security Scan (Parallel)
+  # -------------------------
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: build
+    # Only run on main branch
+    if: github.ref == 'refs/heads/main'
+    
+    strategy:
+      matrix:
+        service: [client, server]
+    
+    steps:
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/pickleball-${{ matrix.service }}:latest
+          format: 'sarif'
+          output: 'trivy-results-${{ matrix.service }}.sarif'
+
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results-${{ matrix.service }}.sarif'
 
   # -------------------------
   # Deploy to Server
@@ -93,39 +213,114 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
+    # Only deploy on main branch pushes (not PRs)
+    if: github.ref == 'refs/heads/main'
+    environment: 
+      name: production
+      url: ${{ secrets.DEPLOYMENT_URL }}
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Copy files to server
-        uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yml,nginx/default.conf,nginx/www"
-          target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
-          strip_components: 0
+          sparse-checkout: |
+            docker-compose.yml
+            nginx/
+          sparse-checkout-cone-mode: false
 
-      - name: Deploy
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Copy deployment files
+        run: |
+          # Use rsync for better file transfer with progress
+          rsync -avz --progress \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            docker-compose.yml \
+            nginx/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/san-pickleball/
+
+      - name: Deploy application
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd /home/${{ secrets.SSH_USER }}/san-pickleball
+            
+            # Set environment variables
+            export COMPOSE_PROJECT_NAME=san-pickleball
+            
+            # Ensure required directories exist
+            mkdir -p ./nginx/www ./data/db
+            
+            # Health check before deployment
+            echo "Starting deployment..."
+            
+            # Graceful shutdown with timeout
+            if docker compose ps -q | grep -q .; then
+              echo "Stopping existing containers..."
+              docker compose down --timeout 30 --remove-orphans
+            fi
+            
+            # Pull latest images with retry logic
+            echo "Pulling latest images..."
+            for i in {1..3}; do
+              if docker compose pull; then
+                break
+              else
+                echo "Pull attempt $i failed, retrying..."
+                sleep 5
+              fi
+            done
+            
+            # Start services with health checks
+            echo "Starting services..."
+            docker compose up -d --wait --wait-timeout 60
+            
+            # Verify deployment
+            echo "Verifying deployment..."
+            if docker compose ps --format json | jq -r '.[].Health' | grep -q unhealthy; then
+              echo "Some containers are unhealthy!"
+              docker compose ps
+              exit 1
+            fi
+            
+            # Cleanup old images (keep last 3 versions)
+            echo "Cleaning up old images..."
+            docker image prune -f --filter "until=72h"
+            
+            echo "Deployment completed successfully!"
+          EOF
 
-            # Ensure webroot exists
-            mkdir -p ./nginx/www
+      - name: Health check
+        run: |
+          # Wait for services to be ready
+          sleep 30
+          
+          # Check if the application is responding
+          if [ -n "${{ secrets.HEALTH_CHECK_URL }}" ]; then
+            for i in {1..5}; do
+              if curl -f -s "${{ secrets.HEALTH_CHECK_URL }}" > /dev/null; then
+                echo "Health check passed!"
+                break
+              else
+                echo "Health check attempt $i failed, retrying..."
+                sleep 10
+              fi
+            done
+          fi
 
-            # Stop any old containers and remove orphans
-            docker compose down --remove-orphans
-
-            # Pull latest images & start all containers
-            docker compose pull
-            docker compose up -d
-
-            # Clean up unused images
-            docker image prune -f
-
+      - name: Notify deployment status
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          channel: '#deployments'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
