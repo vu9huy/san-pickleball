@@ -6,6 +6,7 @@
             |── deploy_ssl.txt
             |── deploy.yml
     |── nginx/
+        |── default.conf
     |── pickleball-client/
         |── dockerfile
     |── pickleball-server/
