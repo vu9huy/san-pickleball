@@ -5,6 +5,8 @@ services:
     restart: always
     ports:
       - "8080:8080"
+    networks:
+      - proxy-net
 
   server:
     image: gaaravu0/pickleball-server:latest
@@ -37,6 +39,8 @@ services:
       - GOOGLE_ANALYTICS_PROPERTY_ID=465695350
     depends_on:
       - mongo
+    networks:
+      - proxy-net
 
   mongo:
     image: mongo:6
@@ -46,6 +50,8 @@ services:
       - "27018:27017"
     volumes:
       - mongo-data:/data/db
+    networks:
+      - proxy-net
 
   nginx:
     image: nginx:alpine
@@ -62,17 +68,30 @@ services:
     depends_on:
       - client
       - server
+    networks:
+      - proxy-net
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
+      # - certbot-etc:/etc/letsencrypt
+      # - certbot-var:/var/lib/letsencrypt
+      # - ./nginx/www:/var/www/certbot
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - ./nginx/www:/var/www/certbot
+      
     entrypoint: sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done"
+    networks:
+      - proxy-net
 
 volumes:
   mongo-data:
   certbot-etc:
   certbot-var:
+
+networks:
+  proxy-net:
+    driver: bridge

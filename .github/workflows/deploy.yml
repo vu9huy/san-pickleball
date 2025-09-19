@@ -51,7 +51,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          source: "docker-compose.yml,nginx/default.conf"
+          source: "docker-compose.yml,nginx/conf.d/sanpicklball_nginx.conf"
           target: "/home/${{ secrets.SSH_USER }}/san-pickleball/"
           strip_components: 0
 
