@@ -5,8 +5,8 @@ services:
     restart: always
     ports:
       - "8080:8080"
-    networks:
-      - proxy-net
+    # networks:
+    #   - proxy-net
 
   server:
     image: gaaravu0/pickleball-server:latest
@@ -39,8 +39,8 @@ services:
       - GOOGLE_ANALYTICS_PROPERTY_ID=465695350
     depends_on:
       - mongo
-    networks:
-      - proxy-net
+    # networks:
+    #   - proxy-net
 
   mongo:
     image: mongo:6
@@ -50,8 +50,8 @@ services:
       - "27018:27017"
     volumes:
       - mongo-data:/data/db
-    networks:
-      - proxy-net
+    # networks:
+    #   - proxy-net
 
   # nginx:
   #   image: nginx:alpine
@@ -85,9 +85,9 @@ services:
 
 volumes:
   mongo-data:
-  certbot-etc:
-  certbot-var:
+  # certbot-etc:
+  # certbot-var:
 
-networks:
-  proxy-net:
-    driver: bridge
+# networks:
+#   proxy-net:
+#     driver: bridge
