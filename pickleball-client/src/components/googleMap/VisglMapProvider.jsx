@@ -4,7 +4,7 @@ import { APIProvider } from "@vis.gl/react-google-maps";
 import { GOOGLE_MAP_API_KEY, VIETNAME_REGION_CODE, VIETNAMESE_LANGUAGE_CODE } from "@/constants/VisglMapConstant";
 import VisglMap from "./visglMap/VisglMap";
 import "./VisglMapProvider.css";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 
 
 const VisglMapContainer = ({ viewState }) => {
@@ -25,5 +25,5 @@ const VisglMapContainer = ({ viewState }) => {
     );
 };
 
-
-export default VisglMapContainer;
+export default React.memo(VisglMapContainer);
+// export default VisglMapContainer;

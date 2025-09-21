@@ -61,11 +61,11 @@
 }
 
 .court-filter-body div {
-    /* max-height: 100%; */
 }
 
 .active .court-filter-body {
-    height: 400px;
+    height: fit-content;
+    max-height: 1000px;
     border: 1px solid var(--primary-color);
     padding: 40px 32px 20px;
 
@@ -107,5 +107,4 @@
 }
 
 .courts-list {
-    /* height: 2000px; */
 }

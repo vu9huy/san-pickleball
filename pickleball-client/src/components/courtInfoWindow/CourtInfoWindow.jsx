@@ -29,6 +29,9 @@
 //         });
 //     };
 
+//     // Create a unique key for the carousel based on court data
+//     const carouselKey = `carousel-${courtData?.id || courtData?.slug || court?.key || Math.random()}`;
+
 //     return (
 //         <div className={`${styles["court-info-window-container"]} ${styles[displayType]}`}>
 //             {handleInfoWindowClose ?
@@ -43,7 +46,7 @@
 //             <div className={`${styles["court-info-window-body"]} ${styles[displayType]} custom-scroll-bar`}>
 //                 <div className={`${styles["court-info-window-box-1"]} ${styles[displayType]}`}>
 //                     <div className={styles["court-info-window-button-group"]}>
-//                         <Link className={styles["court-info-window-google-map-link"]} target="_blank" rel="noopener noreferrer" href={`/tim-san/${courtData.slug}`} passHref={true}>
+//                         <Link className={styles["court-info-window-google-map-link"]} /* target="_blank" rel="noopener noreferrer" */ href={`/tim-san/${courtData.slug}`} passHref={true}>
 //                             <button className={`${styles["court-info-window-go-to-court"]} button`}>Xem chi tiết</button>
 //                         </Link>
 //                         {checkListItemType ?
@@ -69,7 +72,13 @@
 
 //                 <div className={`${styles["court-info-window-box-2"]} ${styles[displayType]}`}>
 //                     <div className={styles["court-info-window-images-list"]}>
-//                         <ReactResponsiveCarousel images={[...courtData?.images, ...courtData?.googlePlaceImages]} slideImageClass={"infowindow-slide"} displayType={displayType} isLazy={true} />
+//                         <ReactResponsiveCarousel 
+//                             key={carouselKey}
+//                             images={[...courtData?.images, ...courtData?.googlePlaceImages]} 
+//                             slideImageClass={"infowindow-slide"} 
+//                             displayType={displayType} 
+//                             isLazy={true} 
+//                         />
 //                     </div>
 //                     {/* {checkMapWindowType ?
 //                         <OpenGoogleMap lat={court?.geolocation?.latitude} lng={court?.geolocation?.longitude} /> :
@@ -85,73 +94,84 @@
 // export default CourtInfoWindow;
 
 
+"use client"; // Add this if you need client-side interactions
+
 import styles from "./CourtInfoWindow.module.css";
 import Link from "next/link";
 import ReactResponsiveCarousel from "../slider/ReactResposiveCarousel";
-import OpenGoogleMap from "../openGoogleMap/OpenGoogleMap";
 import CourtNumber from "../courtInfoComponents/courtNumber/CourtNumber";
 import CourtPrice from "../courtInfoComponents/courtPrice/CourtPrice";
 import CourtAvailable from "../courtInfoComponents/courtAvailable/CourtAvailable";
-import { getCourtBySlugFetchingFunc } from "@/api/serverApi/fetchFunc";
+import { useEffect, useState } from "react";
 
-// displayType: listitem, infowindow
-
-const CourtInfoWindow = async ({ court, handleInfoWindowClose, handleZoom, displayType = "mapwindow" }) => {
-
-    let courtData = court;
+const CourtInfoWindow = ({ court, handleInfoWindowClose, handleZoom, displayType = "mapwindow" }) => {
+    const [courtData, setCourtData] = useState(court);
     const checkListItemType = displayType === "listitem";
-    const checkMapWindowType = displayType === "mapwindow";
-
-    if(displayType === "mapwindow"){
-        const slug = court?.slug;
-        // console.log("slug434343", slug);
-        const response = await getCourtBySlugFetchingFunc(slug);
-        courtData = response?.data || {};
-    }
+    
+    useEffect(() => {
+        // Move async data fetching to useEffect if needed
+        if (displayType === "mapwindow" && court?.slug) {
+            // Fetch additional court data here
+        }
+    }, [court?.slug, displayType]);
 
     const handleScrollToMap = () => {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight - 1350,
-            behavior: "smooth"
-        });
+        if (typeof window !== 'undefined') { // Check for browser environment
+            window.scrollTo({
+                top: document.documentElement.scrollHeight - 1350,
+                behavior: "smooth"
+            });
+        }
     };
 
-    // Create a unique key for the carousel based on court data
-    const carouselKey = `carousel-${courtData?.id || courtData?.slug || court?.key || Math.random()}`;
+    const carouselKey = `carousel-${courtData?.id || courtData?.slug || Math.random()}`;
 
     return (
         <div className={`${styles["court-info-window-container"]} ${styles[displayType]}`}>
-            {handleInfoWindowClose ?
+            {handleInfoWindowClose && (
                 <div className={styles["court-info-window-close-button"]} onClick={handleInfoWindowClose}>
                     <p>+</p>
-                </div> :
-                ""}
-            <div className={styles["court-info-window-header"]} >
+                </div>
+            )}
+            
+            <div className={styles["court-info-window-header"]}>
                 <h2 className={styles["court-info-window-title"]}>{courtData?.name}</h2>
             </div>
 
             <div className={`${styles["court-info-window-body"]} ${styles[displayType]} custom-scroll-bar`}>
                 <div className={`${styles["court-info-window-box-1"]} ${styles[displayType]}`}>
                     <div className={styles["court-info-window-button-group"]}>
-                        <Link className={styles["court-info-window-google-map-link"]} /* target="_blank" rel="noopener noreferrer" */ href={`/tim-san/${courtData.slug}`} passHref={true}>
-                            <button className={`${styles["court-info-window-go-to-court"]} button`}>Xem chi tiết</button>
+                        <Link 
+                            className={styles["court-info-window-google-map-link"]} 
+                            href={`/tim-san/${courtData.slug}`}
+                        >
+                            <button className={`${styles["court-info-window-go-to-court"]} button`}>
+                                Xem chi tiết
+                            </button>
                         </Link>
-                        {checkListItemType ?
-                            <button className={`${styles["court-info-window-view-in-map"]} button`} onClick={handleScrollToMap}>
+                        {checkListItemType && (
+                            <button 
+                                className={`${styles["court-info-window-view-in-map"]} button`} 
+                                onClick={handleScrollToMap}
+                            >
                                 Xem bản đồ
-                            </button> : ""}
+                            </button>
+                        )}
                     </div>
 
                     <p className={styles["court-info-window-description"]}>
                         <span className={styles["court-info-window-label"]}>Mô tả: </span>
                         <span>{courtData?.description}</span>
                     </p>
+                    
                     <div className={styles["court-info-window-available"]}>
                         <CourtAvailable availability={courtData?.availability} />
                     </div>
+                    
                     <div className={styles["court-info-window-courts-number"]}>
                         <CourtNumber number={courtData?.numberOfCourts} />
                     </div>
+                    
                     <div className={styles["court-info-window-courts-price"]}>
                         <CourtPrice bookingInfo={courtData?.bookingInfo} />
                     </div>
@@ -161,21 +181,25 @@ const CourtInfoWindow = async ({ court, handleInfoWindowClose, handleZoom, displ
                     <div className={styles["court-info-window-images-list"]}>
                         <ReactResponsiveCarousel 
                             key={carouselKey}
-                            images={[...courtData?.images, ...courtData?.googlePlaceImages]} 
+                            images={[...(courtData?.images || []), ...(courtData?.googlePlaceImages || [])]} 
                             slideImageClass={"infowindow-slide"} 
                             displayType={displayType} 
                             isLazy={true} 
                         />
                     </div>
-                    {/* {checkMapWindowType ?
-                        <OpenGoogleMap lat={court?.geolocation?.latitude} lng={court?.geolocation?.longitude} /> :
-                        ""} */}
-                    {handleZoom ?
-                        <button className={`${styles["court-info-window-google-map-zoom-button"]} button`} onClick={() => handleZoom(courtData)}>Zoom gần</button> :
-                        ""}
+                    
+                    {handleZoom && (
+                        <button 
+                            className={`${styles["court-info-window-google-map-zoom-button"]} button`} 
+                            onClick={() => handleZoom(courtData)}
+                        >
+                            Zoom gần
+                        </button>
+                    )}
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
+
 export default CourtInfoWindow;

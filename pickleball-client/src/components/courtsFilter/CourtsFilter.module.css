@@ -10,13 +10,11 @@
 }
 
 .courts-filter-wrapper-item label {
-    /* margin-left: 12px; */
     padding-bottom: 0;
     min-width: 70px;
 }
 
 .courts-filter-item {
-    /* margin-bottom: 20px; */
 
 }
 
@@ -102,11 +100,8 @@
 
 .courts-filter-select select option {
     color: #333;
-    /* Text color */
     background-color: #f9f9f9;
-    /* Background color */
     padding: 10px;
-    /* Padding inside the option */
 }
 
 .courts-filter-select select.decorated option:hover {
@@ -117,7 +112,6 @@
 .courts-filter-select select:focus {
     outline: none;
     border-color: var(--primary-color);
-    /* Change border color on focus */
 }
 
 .courts-filter-footer {

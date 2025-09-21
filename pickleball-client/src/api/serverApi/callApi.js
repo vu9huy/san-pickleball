@@ -22,7 +22,8 @@ import {
     getGooglePlaceByPlaceIdFetchingFunc,
     getTopProvincesFunc,
     editUserFunc,
-    getUserLocations
+    getUserLocations,
+    getAllProvincesFunc
 } from "./fetchFunc";
 import { useQueryWrapper, useMutationWrapper } from "./reactQueryWapper";
 
@@ -68,6 +69,11 @@ const useUploadImagesFetchingApi = () => {
 };
 
 // PROVINCES
+const useGetAllProvincesFetchingApi = () => {
+    const response = useQueryWrapper(['get-all-provinces'], () => getAllProvincesFunc());
+    return response;
+}
+
 const useGetTopProvincesFetchingApi = () => {
     const response = useQueryWrapper(['get-top-provinces'], () => getTopProvincesFunc());
     return response;
@@ -166,6 +172,7 @@ export {
     useEditCourtByIdFetchingApi,
 
     // Provinces
+    useGetAllProvincesFetchingApi,
     useGetTopProvincesFetchingApi,
 
     // Google place

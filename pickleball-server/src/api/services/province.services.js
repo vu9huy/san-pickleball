@@ -56,13 +56,10 @@ const hardDeleteProvinceById = async (id) => {
 
 const getTopProvinces = async (query) => {
     const { number } = query;
-    console.log("number433434", number);
-
     const provinces = await Province.aggregate([
         { $sort: { numberOfCourts: -1 } },
         { $limit: Number(number) }
     ]);
-    console.log("provinces4334", provinces);
 
     return provinces;
 };

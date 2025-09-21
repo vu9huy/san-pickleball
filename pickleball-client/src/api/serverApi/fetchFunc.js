@@ -59,6 +59,11 @@ const uploadImagesFetchingFunc = async (formData) => {
 };
 
 // PROVINCES FETCHING
+const getAllProvincesFunc = async () => {
+    const url = "/provinces?limit=100";
+    const response = await getMethod(url, headers);    
+    return response;
+}
 const getTopProvincesFunc = async () => {
     const url = "/provinces/top?number=5";
     const response = await getMethod(url, headers);
@@ -185,6 +190,7 @@ export {
     editCourtFunc,
 
     // Provinces
+    getAllProvincesFunc,
     getTopProvincesFunc,
 
     // Google place

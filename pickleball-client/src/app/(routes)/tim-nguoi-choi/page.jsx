@@ -17,7 +17,10 @@ import useUserData from "@/customHook/useUserData";
 export default function TimNguoiChoi() {
     const { userData, userDataLoading, userDataRefesh } = useUserData();
 
-    if(!userData) return <AuthRequired/>;
+    console.log("userDataLoading323223", userDataLoading);
+    
+
+    if(!userData && !userDataLoading) return <AuthRequired/>;
 
     return <div className={`${styles["tim-nguoi-choi-container"]} page-width`}>
         <LocationProvider 

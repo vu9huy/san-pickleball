@@ -11,7 +11,7 @@ const CourtNumber = ({ number, type = "court" }) => {
                     <span className={styles["court-detail-body-info-block-fake-icon"]}>#</span>
                     :
                     <IconSprites1 id="sprites-icon-location" width="28px" height="28px" fill="#99de47" />}
-                <span>&nbsp;Tìm thấy: </span>
+                <span>&nbsp;Số lượng: </span>
                 <span><span className={styles["court-detail-body-info-block-content"]}> &nbsp;{number}&nbsp;</span></span>
                 <span>{checkCourt ? "sân" : "địa điểm"}</span>
             </span>

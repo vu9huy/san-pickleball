@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { APIProvider, Map } from '@vis.gl/react-google-maps';
 import styles from './UserLocationMap.module.css';
-import { COUNTRY_ZOOM, GOOGLE_MAP_API_KEY, GOOGLE_MAP_MAP_ID, VIETNAME_CENTER_COORDINATES } from '@/constants/VisglMapConstant';
+import { COUNTRY_ZOOM, DISTRICT_ZOOM, GOOGLE_MAP_API_KEY, GOOGLE_MAP_MAP_ID, VIETNAME_CENTER_COORDINATES } from '@/constants/VisglMapConstant';
 import useGetUserLocations from '@/customHook/useGetUserLocations';
 import UserMarker from './UserMarker';
 
@@ -228,7 +228,7 @@ const UserLocationMap = ({userData}) => {
                 ? { lat: userData.location.coordinates[1], lng: userData.location.coordinates[0] }
                 : VIETNAME_CENTER_COORDINATES
             }
-            defaultZoom={COUNTRY_ZOOM}
+            defaultZoom={DISTRICT_ZOOM}
             gestureHandling="greedy"
             disableDefaultUI={false}
             className={styles.map}

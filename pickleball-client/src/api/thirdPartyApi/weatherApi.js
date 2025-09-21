@@ -21,7 +21,6 @@ const getEndpoint = ({ geolocation, forecastDays }) => {
 
     const baseUrl = "https://api.open-meteo.com/v1/forecast";
     const endpoint = `${baseUrl}?${objectToQueryParams(weatherParams)}`;
-    console.log("endpoint544545", endpoint);
     return endpoint;
 };
 const getWeatherForecast = async ({ geolocation, forecastDays }) => {

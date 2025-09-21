@@ -67,7 +67,20 @@ const metadataGeneralList = {
                 alt: "Tổng hợp danh sách sân pickleball theo tỉnh/thành"
             }
         ]
-    }
+    },
+    "tim-nguoi-choi": {
+        title: "Tìm đồng đội chơi pickleball",
+        description: "Tìm đồng đội chơi pickleball ở gần bạn",
+        path: "/tim-nguoi-choi",
+        images: [
+            {
+                url: "https://cdn.shopify.com/s/files/1/0695/2104/7861/files/Screen_Shot_2025-09-20_at_22.09.23.png?v=1758381041",
+                width: 1200,
+                height: 630,
+                alt: "Tìm đồng đội"
+            }
+        ]
+    },
 };
 
 export const getMetadataFromPath = (path) => {
