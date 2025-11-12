@@ -74,7 +74,7 @@ const useGetAllProvincesFetchingApi = () => {
     return response;
 }
 
-const useGetTopProvincesFetchingApi = () => {
+const useGetTopProvincesFetchingApi = () => { 
     const response = useQueryWrapper(['get-top-provinces'], () => getTopProvincesFunc());
     return response;
 }
